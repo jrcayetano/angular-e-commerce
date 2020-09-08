@@ -1,18 +1,24 @@
-import { UserLoggedActions, UserLoggedActionsType, SetIsLogged } from './app-user-logged.actions';
+import {
+  UserLoggedActions,
+  UserLoggedActionsType,
+  SetIsLogged,
+} from './app-user-logged.actions';
 export const initialState: any = {
-  isLogged:  false
+  isLogged: false,
 };
 
-export function userLoggedReducer(state = initialState, action: UserLoggedActions) {
+export function userLoggedReducer(
+  state = initialState,
+  action: UserLoggedActions
+) {
   switch (action.type) {
     case UserLoggedActionsType.setIsLogged: {
       return {
         ...state,
-        isLogged: action.payload
+        isLogged: true,
       };
     }
     default:
       return state;
-
   }
 }

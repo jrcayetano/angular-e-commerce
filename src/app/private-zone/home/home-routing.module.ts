@@ -1,3 +1,5 @@
+import { LoginModule } from './../../public-zone/login/login.module';
+import { LoginComponent } from './../../public-zone/login/login.component';
 import { HomeComponent } from './home.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
@@ -7,13 +9,17 @@ const routes: Routes = [
   {
     path: '',
     component: HomeComponent,
-    canActivate: [AuthGuard],
-    canActivateChild: [AuthGuard]
-  }
+    children: [
+      {
+        path: 'login',
+        loadChildren: () => LoginModule,
+      },
+    ],
+  },
 ];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class HomeRoutingModule { }
+export class HomeRoutingModule {}

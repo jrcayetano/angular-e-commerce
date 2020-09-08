@@ -1,3 +1,4 @@
+import { HomeComponent } from './private-zone/home/home.component';
 import { LoginModule } from './public-zone/login/login.module';
 import { HomeModule } from './private-zone/home/home.module';
 import { AuthGuard } from './guard/auth.guard';
@@ -6,24 +7,18 @@ import { Routes, RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
 
 const routes: Routes = [
+  /*  {
+    path: 'login',
+    loadChildren: () => LoginModule,
+  }, */
   {
     path: '',
-    pathMatch: 'full',
-    redirectTo: 'home'
+    loadChildren: () => HomeModule,
   },
-  {
-    path: 'login',
-    loadChildren: () => LoginModule
-  },
-  {
-
-    path: 'home',
-    loadChildren: () => HomeModule
-  }
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}
