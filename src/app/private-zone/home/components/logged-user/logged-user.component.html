@@ -1,0 +1,27 @@
+<div class="logged-user">
+  <div
+    ngbDropdown
+    class="d-inline-block"
+    *ngIf="isLogged$ | async; else noLogged"
+    placement="botton-right"
+  >
+    <button
+      class="btn btn-outline-primary logged-user__options"
+      id="dropdownBasic1"
+      ngbDropdownToggle
+    >
+      {{ username$ | async }}
+    </button>
+    <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+      <button ngbDropdownItem>Editar perfil</button>
+      <button ngbDropdownItem>Pedidos realizados</button>
+      <button ngbDropdownItem>Pedidos favoritos</button>
+    </div>
+  </div>
+</div>
+
+<ng-template #noLogged>
+  <button type="button" class="btn btn-warning" (click)="handleLogin()">
+    Identificarte
+  </button>
+</ng-template>

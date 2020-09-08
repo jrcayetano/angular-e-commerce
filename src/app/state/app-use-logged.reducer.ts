@@ -5,6 +5,8 @@ import {
 } from './app-user-logged.actions';
 export const initialState: any = {
   isLogged: false,
+  username: 'jose',
+  email: 'jose@email.com',
 };
 
 export function userLoggedReducer(

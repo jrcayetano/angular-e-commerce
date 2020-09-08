@@ -14,8 +14,4 @@ export class HeaderComponent implements OnInit {
   constructor(private router: Router) {}
 
   ngOnInit(): void {}
-
-  public handleLogin(): void {
-    this.router.navigate(['/login']);
-  }
 }
