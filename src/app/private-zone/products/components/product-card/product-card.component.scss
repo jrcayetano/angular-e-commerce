@@ -1,0 +1,44 @@
+.product-card {
+  a {
+    display: flex;
+    flex-direction: column;
+    &:hover {
+      text-decoration: none;
+    }
+  }
+}
+
+.product-card__badge {
+  padding-bottom: 0.5rem;
+}
+
+.product-card__info__title,
+.product-card__info__description,
+.product-card__info__price,
+.product-card__info__delivery {
+  display: block;
+  text-align: center;
+  color: black;
+  font-size: 15px;
+}
+
+.product-card__info__title {
+  font-weight: 700;
+}
+
+.product-card__info__description,
+.product-card__info__price {
+  font-weight: 400;
+}
+
+.product-card__info__price {
+  font-size: 21px;
+}
+.product-card__info__delivery {
+  font-size: 14px;
+}
+
+.product-card__image {
+  display: flex;
+  justify-content: center;
+}

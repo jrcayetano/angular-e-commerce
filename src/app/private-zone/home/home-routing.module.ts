@@ -3,6 +3,7 @@ import { RegisterModule } from './../../public-zone/register/register.module';
 import { HomeComponent } from './home.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { ProductsModule } from '../products/products.module';
 
 const routes: Routes = [
   {
@@ -16,6 +17,10 @@ const routes: Routes = [
       {
         path: 'register',
         loadChildren: () => RegisterModule,
+      },
+      {
+        path: 'products',
+        loadChildren: () => ProductsModule,
       },
     ],
   },
