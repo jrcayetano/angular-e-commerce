@@ -1,7 +1,7 @@
 import { Action } from '@ngrx/store';
 
 export enum BasketActionsType {
-  addProduct = '[User logged - setIsLogged]',
+  addProduct = '[BASKET - add product]',
 }
 
 export class AddProduct implements Action {
