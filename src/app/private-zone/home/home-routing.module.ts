@@ -1,3 +1,4 @@
+import { UserManagementModule } from './../user-management/user-management.module';
 import { LoginModule } from './../../public-zone/login/login.module';
 import { RegisterModule } from './../../public-zone/register/register.module';
 import { HomeComponent } from './home.component';
@@ -21,6 +22,10 @@ const routes: Routes = [
       {
         path: 'products',
         loadChildren: () => ProductsModule,
+      },
+      {
+        path: 'user',
+        loadChildren: () => UserManagementModule,
       },
     ],
   },

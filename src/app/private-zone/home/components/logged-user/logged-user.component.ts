@@ -2,7 +2,12 @@ import { Observable } from 'rxjs';
 import { Component, OnInit } from '@angular/core';
 import { Store, select } from '@ngrx/store';
 import { Router } from '@angular/router';
-
+import {
+  HOME_PATH,
+  EDIT_PROFILE_PATH,
+  LOGIN_PATH,
+  USER_PATH,
+} from './../../../../consts/paths';
 @Component({
   selector: 'app-logged-user',
   templateUrl: './logged-user.component.html',
@@ -19,7 +24,7 @@ export class LoggedUserComponent implements OnInit {
   }
 
   public handleLogin(): void {
-    this.router.navigate(['/login']);
+    this.router.navigate([`/${LOGIN_PATH}`]);
   }
 
   private getUsername(): void {
@@ -27,5 +32,9 @@ export class LoggedUserComponent implements OnInit {
   }
   private isLogged(): void {
     this.isLogged$ = this.store.pipe(select('userLogged', 'isLogged'));
+  }
+
+  onEditProfileClick() {
+    this.router.navigate([`/${HOME_PATH}/${USER_PATH}/${EDIT_PROFILE_PATH}`]);
   }
 }

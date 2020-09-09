@@ -115,5 +115,15 @@
     "Zaragoza",
     "Ceuta",
     "Melilla"
-  ]
+  ],
+  "user/profile": {
+    "username": "jose_username",
+    "email": "jose@email.com",
+    "name": "jose_name",
+    "surname": "surname1 surname2",
+    "address": "1234 Main St",
+    "city": "city_test",
+    "state": "Sevilla",
+    "zip": "41001"
+  }
 }

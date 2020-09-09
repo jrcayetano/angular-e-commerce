@@ -13,7 +13,9 @@
       {{ username$ | async }}
     </button>
     <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
-      <button ngbDropdownItem>Editar perfil</button>
+      <button ngbDropdownItem (click)="onEditProfileClick()">
+        Editar perfil
+      </button>
       <button ngbDropdownItem>Pedidos realizados</button>
       <button ngbDropdownItem>Pedidos favoritos</button>
     </div>
