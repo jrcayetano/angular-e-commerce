@@ -6,9 +6,14 @@ import { CommonModule } from '@angular/common';
 
 import { ProductsRoutingModule } from './products-routing.module';
 import { ProductCardComponent } from './components/product-card/product-card.component';
+import { ProductsGridComponent } from './components/products-grid/products-grid.component';
 
 @NgModule({
-  declarations: [ProductsComponent, ProductCardComponent],
+  declarations: [
+    ProductsComponent,
+    ProductCardComponent,
+    ProductsGridComponent,
+  ],
   imports: [CommonModule, ProductsRoutingModule, HttpClientModule],
   providers: [ProductsService],
 })

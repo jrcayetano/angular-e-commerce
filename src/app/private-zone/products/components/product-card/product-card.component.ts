@@ -1,4 +1,4 @@
-import { ProductCard } from './../../../../models/product-card.model';
+import { ProductCard } from 'src/app/models/product-card.model';
 import { PRODUCTS_PATH } from './../../../../consts/paths';
 import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
 
@@ -9,13 +9,11 @@ import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
 })
 export class ProductCardComponent implements OnInit {
   @Input() product: ProductCard;
-  @Output() buy: EventEmitter<ProductCard>;
+  @Output() buy: EventEmitter<ProductCard> = new EventEmitter<ProductCard>();
   productPath = PRODUCTS_PATH;
   constructor() {}
 
-  ngOnInit(): void {
-    console.log(this.product);
-  }
+  ngOnInit(): void {}
 
   onBuyClick() {
     this.buy.emit({ ...this.product });
