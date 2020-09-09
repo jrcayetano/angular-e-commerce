@@ -1,9 +1,8 @@
 import { LoginModule } from './../../public-zone/login/login.module';
-import { LoginComponent } from './../../public-zone/login/login.component';
+import { RegisterModule } from './../../public-zone/register/register.module';
 import { HomeComponent } from './home.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { AuthGuard } from 'src/app/guard/auth.guard';
 
 const routes: Routes = [
   {
@@ -13,6 +12,10 @@ const routes: Routes = [
       {
         path: 'login',
         loadChildren: () => LoginModule,
+      },
+      {
+        path: 'register',
+        loadChildren: () => RegisterModule,
       },
     ],
   },

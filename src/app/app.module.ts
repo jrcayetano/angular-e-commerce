@@ -9,6 +9,8 @@ import { userLoggedReducer } from './state/app-use-logged.reducer';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 
+import { ReactiveFormsModule } from '@angular/forms';
+
 const reducers: ActionReducerMap<any> = {
   userLogged: userLoggedReducer,
 };
@@ -20,6 +22,7 @@ export let metaReducers: Array<MetaReducer<any, any>> = [];
   imports: [
     BrowserModule,
     AppRoutingModule,
+    ReactiveFormsModule,
     StoreModule.forRoot(reducers, { metaReducers }),
     StoreDevtoolsModule.instrument({
       maxAge: 100,

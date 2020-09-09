@@ -1,0 +1,100 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "Product 1",
+      "description": "Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...",
+      "image": "https://picsum.photos/200/200?random=1",
+      "price": 10
+    },
+    {
+      "id": 2,
+      "name": "Product 2",
+      "description": "Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...",
+      "image": "https://picsum.photos/200/200?random=2",
+      "price": 20
+    },
+    {
+      "id": 3,
+      "name": "Product 3",
+      "description": "Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...",
+      "image": "https://picsum.photos/200/200?random=3",
+      "price": 30
+    },
+    {
+      "id": 4,
+      "name": "Product 4",
+      "description": "Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...",
+      "image": "https://picsum.photos/200/200?random=4",
+      "price": 40
+    },
+    {
+      "id": 5,
+      "name": "Product 5",
+      "description": "Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...",
+      "image": "https://picsum.photos/200/200?random=6",
+      "price": 50
+    },
+    {
+      "id": 6,
+      "name": "Product 6",
+      "description": "Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...",
+      "image": "https://picsum.photos/200/200?random=7",
+      "price": 60
+    }
+  ],
+  "states": [
+    "Albacete",
+    "Alicante/Alacant",
+    "Almería",
+    "Araba/Álava",
+    "Asturias",
+    "Ávila",
+    "Badajoz",
+    "Balears, Illes",
+    "Barcelona",
+    "Bizkaia",
+    "Burgos",
+    "Cáceres",
+    "Cádiz",
+    "Cantabria",
+    "Castellón/Castelló",
+    "Ciudad Real",
+    "Córdoba",
+    "Coruña, A",
+    "Cuenca",
+    "Gipuzkoa",
+    "Girona",
+    "Granada",
+    "Guadalajara",
+    "Huelva",
+    "Huesca",
+    "Jaén",
+    "León",
+    "Lleida",
+    "Lugo",
+    "Madrid",
+    "Málaga",
+    "Murcia",
+    "Navarra",
+    "Ourense",
+    "Palencia",
+    "Palmas, Las",
+    "Pontevedra",
+    "Rioja, La",
+    "Salamanca",
+    "Santa Cruz de Tenerife",
+    "Segovia",
+    "Sevilla",
+    "Soria",
+    "Tarragona",
+    "Teruel",
+    "Toledo",
+    "Valencia/València",
+    "Valladolid",
+    "Zamora",
+    "Zaragoza",
+    "Ceuta",
+    "Melilla"
+  ]
+}
