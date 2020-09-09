@@ -18,6 +18,7 @@ footer {
     align-items: center;
     width: 100%;
     justify-content: space-evenly;
+    padding-left: 0;
   }
 }
 .footer-wrap {
@@ -31,4 +32,16 @@ footer {
 
 .footer-wrap__reserved-rights {
   color: $color_reserver-rights;
+}
+
+@media (max-width: 768px) {
+  footer {
+    padding-top: 1rem;
+  }
+  ul {
+    flex-direction: column;
+    li {
+      padding: 0.3rem 0;
+    }
+  }
 }
