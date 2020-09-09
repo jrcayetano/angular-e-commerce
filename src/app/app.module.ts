@@ -1,18 +1,34 @@
+import { HomeModule } from './private-zone/home/home.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { StoreModule, ActionReducerMap, MetaReducer } from '@ngrx/store';
+import { userLoggedReducer } from './state/app-use-logged.reducer';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+
+import { ReactiveFormsModule } from '@angular/forms';
+
+const reducers: ActionReducerMap<any> = {
+  userLogged: userLoggedReducer,
+};
+
+export let metaReducers: Array<MetaReducer<any, any>> = [];
 
 @NgModule({
-  declarations: [
-    AppComponent
-  ],
+  declarations: [AppComponent],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule,
+    StoreModule.forRoot(reducers, { metaReducers }),
+    StoreDevtoolsModule.instrument({
+      maxAge: 100,
+    }),
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
