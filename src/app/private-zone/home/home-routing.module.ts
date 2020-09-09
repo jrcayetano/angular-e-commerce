@@ -1,8 +1,10 @@
+import { UserManagementModule } from './../user-management/user-management.module';
 import { LoginModule } from './../../public-zone/login/login.module';
 import { RegisterModule } from './../../public-zone/register/register.module';
 import { HomeComponent } from './home.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { ProductsModule } from '../products/products.module';
 
 const routes: Routes = [
   {
@@ -16,6 +18,14 @@ const routes: Routes = [
       {
         path: 'register',
         loadChildren: () => RegisterModule,
+      },
+      {
+        path: 'products',
+        loadChildren: () => ProductsModule,
+      },
+      {
+        path: 'user',
+        loadChildren: () => UserManagementModule,
       },
     ],
   },

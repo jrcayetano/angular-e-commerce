@@ -1,6 +1,8 @@
-import { OnDestroy } from '@angular/core';
+import { OnDestroy, Injectable } from '@angular/core';
 import { Subject, Observable } from 'rxjs';
 /** class to autounsubscribe from store when components are destroyed */
+
+@Injectable()
 export class AutoUnsubscribe implements OnDestroy {
   protected readonly autoUnsubscribe$: Observable<any>;
   private readonly onDestroy$: Subject<any>;

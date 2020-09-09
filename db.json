@@ -4,43 +4,62 @@
       "id": 1,
       "name": "Product 1",
       "description": "Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...",
-      "image": "https://picsum.photos/200/200?random=1",
-      "price": 10
+      "image": "https://picsum.photos/300/300?random=1",
+      "price": 10,
+      "src": "https://m.media-amazon.com/images/I/51NP0hfzakL._AC_UL320_.jpg",
+      "srcset": [
+        "https://m.media-amazon.com/images/I/51NP0hfzakL._AC_UL320_.jpg 1x",
+        "https://m.media-amazon.com/images/I/51NP0hfzakL._AC_UL480_FMwebp_QL65_.jpg 1.5x",
+        "https://m.media-amazon.com/images/I/51NP0hfzakL._AC_UL640_FMwebp_QL65_.jpg 2x",
+        "https://m.media-amazon.com/images/I/51NP0hfzakL._AC_UL800_FMwebp_QL65_.jpg 2.5x",
+        "https://m.media-amazon.com/images/I/51NP0hfzakL._AC_UL960_FMwebp_QL65_.jpg 3x"
+      ],
+      "delivery": "30 de Septiembre"
     },
     {
       "id": 2,
       "name": "Product 2",
       "description": "Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...",
-      "image": "https://picsum.photos/200/200?random=2",
-      "price": 20
+      "image": "https://picsum.photos/300/300?random=2",
+      "price": 20,
+      "srcset": [],
+      "delivery": "30 de Septiembre"
     },
     {
       "id": 3,
       "name": "Product 3",
       "description": "Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...",
-      "image": "https://picsum.photos/200/200?random=3",
-      "price": 30
+      "image": "https://picsum.photos/300/300?random=3",
+      "price": 30,
+      "srcset": [],
+      "delivery": "30 de Septiembre"
     },
     {
       "id": 4,
       "name": "Product 4",
       "description": "Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...",
-      "image": "https://picsum.photos/200/200?random=4",
-      "price": 40
+      "image": "https://picsum.photos/300/300?random=4",
+      "price": 40,
+      "srcset": [],
+      "delivery": "30 de Septiembre"
     },
     {
       "id": 5,
       "name": "Product 5",
       "description": "Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...",
-      "image": "https://picsum.photos/200/200?random=6",
-      "price": 50
+      "image": "https://picsum.photos/300/300?random=6",
+      "price": 50,
+      "srcset": [],
+      "delivery": "30 de Septiembre"
     },
     {
       "id": 6,
       "name": "Product 6",
       "description": "Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...",
-      "image": "https://picsum.photos/200/200?random=7",
-      "price": 60
+      "image": "https://picsum.photos/300/300?random=7",
+      "price": 60,
+      "srcset": [],
+      "delivery": "30 de Septiembre"
     }
   ],
   "states": [
@@ -96,5 +115,15 @@
     "Zaragoza",
     "Ceuta",
     "Melilla"
-  ]
+  ],
+  "user/profile": {
+    "username": "jose_username",
+    "email": "jose@email.com",
+    "name": "jose_name",
+    "surname": "surname1 surname2",
+    "address": "1234 Main St",
+    "city": "city_test",
+    "state": "Sevilla",
+    "zip": "41001"
+  }
 }

@@ -56,7 +56,7 @@
 
   <!-- Step 3: Toggle the value of the property when the toggler button is clicked. -->
   <div>
-    <fa-icon [icon]="faShoppingCart"></fa-icon>
+    <app-basket></app-basket>
     <button
       class="navbar-toggler"
       type="button"
@@ -102,7 +102,10 @@
         >
       </li>
       <li class="nav-item">
-        <a class="nav-link" [routerLink]="'.'" (click)="isMenuCollapsed = true"
+        <a
+          class="nav-link"
+          [routerLink]="[PRODUCTS_PATH]"
+          (click)="isMenuCollapsed = true"
           >Products</a
         >
       </li>
@@ -111,7 +114,6 @@
 
   <div class="header__right-part d-none d-lg-block">
     <app-logged-user></app-logged-user>
-
-    <fa-icon [icon]="faShoppingCart"></fa-icon>
+    <app-basket></app-basket>
   </div>
 </nav>
