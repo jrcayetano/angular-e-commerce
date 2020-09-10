@@ -2,3 +2,9 @@ $color_main_background: #eaeded;
 :host {
   background-color: $color_main_background;
 }
+
+.main-content {
+  position: relative;
+  min-height: 83.8vh;
+  padding-bottom: 2rem;
+}

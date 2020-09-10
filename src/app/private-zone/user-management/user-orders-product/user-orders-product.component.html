@@ -1,0 +1,17 @@
+<div class="order-item__body__product">
+  <div class="order-item__body__product__image">
+    <img class="img-fluid" [src]="product.image" />
+  </div>
+  <div class="order-item__body__product__info">
+    <div class="order-item__body__product__description">
+      <a href="#">{{ product.description }}</a>
+    </div>
+    <div class="order-item__body__product__seller">
+      Venido por {{ product?.seller?.name }}
+    </div>
+    <div class="order-item__body__product__refund">
+      Devolución elegible hasta {{ product.delivery }}
+    </div>
+    <div class="order-item__body__product__price">EUR {{ product.price }}</div>
+  </div>
+</div>

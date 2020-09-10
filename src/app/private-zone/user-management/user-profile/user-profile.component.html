@@ -1,1 +1,10 @@
-<p>user-profile works!</p>
+<div class="container">
+  <div class="row">
+    <div class="col w-100">
+      <h3 class="login-form__title">Edit profile</h3>
+      <app-user-profile-form
+        [profile]="userProfile$ | async"
+      ></app-user-profile-form>
+    </div>
+  </div>
+</div>

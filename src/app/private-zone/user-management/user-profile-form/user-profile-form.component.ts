@@ -1,23 +1,55 @@
+import { UserService } from './../services/user.service';
+import { takeUntil } from 'rxjs/operators';
+import { AutoUnsubscribe } from './../../../utils/auto-unsubscribe';
+import { LOGIN_PATH } from './../../../consts/paths';
+import { Router } from '@angular/router';
+import { StatesService } from './../../../services/states.service';
+import { ProfileResponse } from '../../../models/profile-response.model';
+import {
+  VALID_EMAIL_PATTERN,
+  VALID_ZIP_PATTERN,
+} from './../../../consts/patterns';
 import { Observable } from 'rxjs';
 import { Validators, FormBuilder, FormGroup } from '@angular/forms';
-import { Component, OnInit } from '@angular/core';
+import {
+  Component,
+  OnInit,
+  Input,
+  OnChanges,
+  SimpleChange,
+  SimpleChanges,
+  ChangeDetectionStrategy,
+} from '@angular/core';
 
 @Component({
   selector: 'app-user-profile-form',
   templateUrl: './user-profile-form.component.html',
   styleUrls: ['./user-profile-form.component.scss'],
 })
-export class UserProfileFormComponent implements OnInit {
+export class UserProfileFormComponent
+  extends AutoUnsubscribe
+  implements OnInit, OnChanges {
   states$: Observable<any>;
   form: FormGroup;
   submitted = false;
-  zipPattern = '^[0-9]+$';
-  emailPattern = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-  constructor(private formBuilder: FormBuilder) {}
+  @Input() profile: ProfileResponse;
+  constructor(
+    private formBuilder: FormBuilder,
+    private statesService: StatesService,
+    private userService: UserService
+  ) {
+    super();
+  }
 
   ngOnInit(): void {
-    this.form = this.generateFormBuilder();
+    this.form = this.generateFormBuilder(this.profile);
     this.loadStates();
+  }
+
+  ngOnChanges(change: SimpleChanges) {
+    if (change && change.profile && change.profile.currentValue) {
+      this.form = this.generateFormBuilder(change.profile.currentValue);
+    }
   }
 
   onSubmit(): void {
@@ -26,36 +58,42 @@ export class UserProfileFormComponent implements OnInit {
     if (this.form.invalid) {
       return;
     }
-    // this.registerUser();
+    this.updateProfile();
   }
 
   get f() {
     return this.form.controls;
   }
 
-  private generateFormBuilder(): FormGroup {
+  private generateFormBuilder(profile?: ProfileResponse): FormGroup {
     return this.formBuilder.group({
-      username: ['', [Validators.required]],
-      email: ['', [Validators.required, Validators.pattern(this.emailPattern)]],
-      name: ['', [Validators.required]],
-      surname: ['', [Validators.required]],
-      address: ['', [Validators.required]],
-      city: ['', [Validators.required]],
-      state: ['', [Validators.required]],
-      zip: ['', [Validators.required, Validators.pattern(this.zipPattern)]],
+      username: [(profile && profile.username) || '', [Validators.required]],
+      email: [
+        (profile && profile.email) || '',
+        [Validators.required, Validators.pattern(VALID_EMAIL_PATTERN)],
+      ],
+      name: [(profile && profile.name) || '', [Validators.required]],
+      surname: [(profile && profile.surname) || '', [Validators.required]],
+      address: [(profile && profile.address) || '', [Validators.required]],
+      city: [(profile && profile.city) || '', [Validators.required]],
+      state: [(profile && profile.state) || '', [Validators.required]],
+      zip: [
+        (profile && profile.zip) || '',
+        [Validators.required, Validators.pattern(VALID_ZIP_PATTERN)],
+      ],
     });
   }
 
   private loadStates(): void {
-    // this.states$ = this.registerService.getState();
+    this.states$ = this.statesService
+      .getState()
+      .pipe(takeUntil(this.autoUnsubscribe$));
   }
 
-  /*  private registerUser() {
-    this.registerService.register(this.form.value).subscribe((response) => {
+  private updateProfile() {
+    this.userService.updateProfile(this.form.value).subscribe((response) => {
       if (response) {
-        // this.store.dispatch(new SetIsLogged());
-        this.router.navigate([`/${LOGIN_PATH}`]);
       }
     });
-  } */
+  }
 }

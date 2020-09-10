@@ -1,3 +1,4 @@
+import { StatesService } from './services/states.service';
 import { HomeModule } from './private-zone/home/home.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';

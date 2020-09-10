@@ -4,7 +4,7 @@ import {
   SetIsLogged,
 } from './app-user-logged.actions';
 export const initialState: any = {
-  isLogged: false,
+  isLogged: true,
   username: 'jose',
   email: 'jose@email.com',
 };

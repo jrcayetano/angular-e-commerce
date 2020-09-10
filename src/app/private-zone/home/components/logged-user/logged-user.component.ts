@@ -7,6 +7,7 @@ import {
   EDIT_PROFILE_PATH,
   LOGIN_PATH,
   USER_PATH,
+  USER_ORDERS_PATH,
 } from './../../../../consts/paths';
 @Component({
   selector: 'app-logged-user',
@@ -36,5 +37,9 @@ export class LoggedUserComponent implements OnInit {
 
   onEditProfileClick() {
     this.router.navigate([`/${HOME_PATH}/${USER_PATH}/${EDIT_PROFILE_PATH}`]);
+  }
+
+  onOrdersClick() {
+    this.router.navigate([`/${HOME_PATH}/${USER_PATH}/${USER_ORDERS_PATH}`]);
   }
 }

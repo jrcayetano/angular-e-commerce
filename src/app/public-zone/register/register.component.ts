@@ -1,3 +1,8 @@
+import {
+  VALID_ZIP_PATTERN,
+  VALID_EMAIL_PATTERN,
+  VALID_PASSWORD_PATTERN,
+} from './../../consts/patterns';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { LoginService } from 'src/app/public-zone/login/services/login.service';
@@ -17,17 +22,6 @@ export class RegisterComponent implements OnInit {
   states$: Observable<any>;
   form: FormGroup;
   submitted = false;
-  zipPattern = '^[0-9]+$';
-  /**
-   * Passwords must be
-   * - At least 8 characters long, max length anything
-   * - Include at least 1 lowercase letter
-   * - 1 capital letter
-   * - 1 number
-   * - 1 special character => !@#$%^&*
-   **/
-  passwordPattern = /^(?=.*[\d])(?=.*[A-Z])(?=.*[a-z])(?=.*[!@#$%^&*])[\w!@#$%^&*]{8,}$/;
-  emailPattern = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
   constructor(
     private formBuilder: FormBuilder,
     private registerService: RegisterService,
@@ -58,20 +52,20 @@ export class RegisterComponent implements OnInit {
         username: ['', [Validators.required]],
         email: [
           '',
-          [Validators.required, Validators.pattern(this.emailPattern)],
+          [Validators.required, Validators.pattern(VALID_EMAIL_PATTERN)],
         ],
         name: ['', [Validators.required]],
         surname: ['', [Validators.required]],
         address: ['', [Validators.required]],
         city: ['', [Validators.required]],
         state: ['', [Validators.required]],
-        zip: ['', [Validators.required, Validators.pattern(this.zipPattern)]],
+        zip: ['', [Validators.required, Validators.pattern(VALID_ZIP_PATTERN)]],
         password: [
           '',
           [
             Validators.required,
             Validators.minLength(8),
-            Validators.pattern(this.passwordPattern),
+            Validators.pattern(VALID_PASSWORD_PATTERN),
           ],
         ],
         repassword: ['', [Validators.required]],

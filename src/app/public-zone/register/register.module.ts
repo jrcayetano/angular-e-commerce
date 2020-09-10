@@ -1,3 +1,4 @@
+import { StatesService } from './../../services/states.service';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
@@ -15,7 +16,7 @@ import { RegisterService } from './services/register.service';
     ReactiveFormsModule,
     HttpClientModule,
   ],
-  providers: [RegisterService],
+  providers: [RegisterService, StatesService],
   exports: [],
 })
 export class RegisterModule {}
