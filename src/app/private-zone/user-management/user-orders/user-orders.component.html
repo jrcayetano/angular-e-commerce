@@ -1,0 +1,12 @@
+<div class="container">
+  <div class="row">
+    <div class="col w-100">
+      <h3 class="title-page">My Orders</h3>
+      <!-- <app-user-orders-item></app-user-orders-item> -->
+      <app-user-orders-item
+        [order]="order"
+        *ngFor="let order of orders$ | async"
+      ></app-user-orders-item>
+    </div>
+  </div>
+</div>

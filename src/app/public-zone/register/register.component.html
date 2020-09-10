@@ -108,7 +108,7 @@
               formControlName="state"
               [ngClass]="{ 'is-invalid': submitted && f.state.errors }"
             >
-              <option selected>Choose...</option>
+              <option [ngValue]="null" selected>Choose...</option>
               <option *ngFor="let state of states$ | async">{{ state }}</option>
             </select>
             <div *ngIf="submitted && f.state.errors" class="invalid-feedback">

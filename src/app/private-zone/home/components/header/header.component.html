@@ -72,7 +72,10 @@
     <ul class="navbar-nav d-block d-lg-none">
       <li class="nav-item">
         <!-- Step 4: Close the menu when a link is clicked. -->
-        <a class="nav-link" [routerLink]="'.'" (click)="isMenuCollapsed = true"
+        <a
+          class="nav-link"
+          [routerLink]="[EDIT_PROFILE_PATH]"
+          (click)="isMenuCollapsed = true"
           >Edit profile</a
         >
       </li>

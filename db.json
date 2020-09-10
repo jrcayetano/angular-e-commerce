@@ -116,14 +116,93 @@
     "Ceuta",
     "Melilla"
   ],
-  "user/profile": {
-    "username": "jose_username",
+  "userprofile": {
+    "id": 1,
+    "username": "jose_username_test",
     "email": "jose@email.com",
-    "name": "jose_name",
-    "surname": "surname1 surname2",
-    "address": "1234 Main St",
+    "name": "jose_name_test",
+    "surname": "surname1 surname2_test",
+    "address": "1234 Main St_test",
     "city": "city_test",
     "state": "Sevilla",
     "zip": "41001"
-  }
+  },
+  "userorders": [
+    {
+      "id": 1,
+      "date": "2 de septiembre de 2020",
+      "total": 26.34,
+      "receiver": "Jose",
+      "number": "405-2020194-0140313",
+      "refund": "8 oct 2020",
+      "delivery": {
+        "status": "Entregado",
+        "info": "El paquete se ha dejado en el buzón"
+      },
+      "products": [
+        {
+          "id": 1,
+          "name": "Product 1",
+          "description": "ELEGIANT SmartWatch Reloj Inteligente IP68 con Pantalla Táctil de 1.3'', Pulsera Actividad Inteligente Hombre Mujer Niños para Deporte, Monitor de",
+          "image": "https://m.media-amazon.com/images/I/51NP0hfzakL._AC_UL320_.jpg",
+          "price": 26.34,
+          "src": "https://m.media-amazon.com/images/I/51NP0hfzakL._AC_UL320_.jpg",
+          "srcset": [
+            "https://m.media-amazon.com/images/I/51NP0hfzakL._AC_UL320_.jpg 1x",
+            "https://m.media-amazon.com/images/I/51NP0hfzakL._AC_UL480_FMwebp_QL65_.jpg 1.5x",
+            "https://m.media-amazon.com/images/I/51NP0hfzakL._AC_UL640_FMwebp_QL65_.jpg 2x",
+            "https://m.media-amazon.com/images/I/51NP0hfzakL._AC_UL800_FMwebp_QL65_.jpg 2.5x",
+            "https://m.media-amazon.com/images/I/51NP0hfzakL._AC_UL960_FMwebp_QL65_.jpg 3x"
+          ],
+          "delivery": "30 de Septiembre",
+          "seller": {
+            "name": "Daifenni",
+            "profile": ""
+          }
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "date": "2 de septiembre de 2020",
+      "total": 154.82,
+      "receiver": "Jose",
+      "number": "405-2020194-0140315",
+      "refund": "8 oct 2020",
+      "delivery": {
+        "status": "Entregado",
+        "info": "El paquete se ha dejado en el buzón"
+      },
+      "products": [
+        {
+          "id": 2,
+          "name": "Tommy Hilfiger",
+          "description": "Tommy Hilfiger Reloj Multiesfera para Hombre de Cuarzo con Correa en Silicona 1791476",
+          "image": "https://images-na.ssl-images-amazon.com/images/I/91qpKMtIbjL._AC_UX385_.jpg",
+          "price": 125.84,
+          "src": "https://images-na.ssl-images-amazon.com/images/I/91qpKMtIbjL._AC_UX385_.jpg",
+          "srcset": [],
+          "delivery": "30 de Febrero",
+          "seller": {
+            "name": "Amazon",
+            "profile": ""
+          }
+        },
+        {
+          "id": 3,
+          "name": "Huston",
+          "description": "Tommy Hilfiger Reloj Multiesfera para Hombre de Cuarzo con Correa en Silicona 1791476",
+          "image": "https://images-na.ssl-images-amazon.com/images/I/612KvnroDOL._AC_UX679_.jpg",
+          "price": 28.98,
+          "src": "https://images-na.ssl-images-amazon.com/images/I/612KvnroDOL._AC_UX679_.jpg",
+          "srcset": [],
+          "delivery": "30 de Enero",
+          "seller": {
+            "name": "MEGIR",
+            "profile": ""
+          }
+        }
+      ]
+    }
+  ]
 }

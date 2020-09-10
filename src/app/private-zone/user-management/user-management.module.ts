@@ -1,3 +1,6 @@
+import { StatesService } from './../../services/states.service';
+import { HttpClientModule } from '@angular/common/http';
+import { UserService } from './services/user.service';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
@@ -5,9 +8,17 @@ import { UserManagementRoutingModule } from './user-management-routing.module';
 import { UserProfileComponent } from './user-profile/user-profile.component';
 import { UserProfileFormComponent } from './user-profile-form/user-profile-form.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { UserOrdersComponent } from './user-orders/user-orders.component';
+import { UserOrdersItemComponent } from './user-orders-item/user-orders-item.component';
 
 @NgModule({
-  declarations: [UserProfileComponent, UserProfileFormComponent],
-  imports: [CommonModule, UserManagementRoutingModule, ReactiveFormsModule],
+  declarations: [UserProfileComponent, UserProfileFormComponent, UserOrdersComponent, UserOrdersItemComponent],
+  imports: [
+    CommonModule,
+    UserManagementRoutingModule,
+    ReactiveFormsModule,
+    HttpClientModule,
+  ],
+  providers: [UserService, StatesService],
 })
 export class UserManagementModule {}
