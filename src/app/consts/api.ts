@@ -6,3 +6,4 @@ export const API_USER = 'user';
 export const API_PROFILE = 'userprofile';
 export const API_PROFILE_EDIT = 'userprofileedit';
 export const API_USER_ORDERS = 'userorders';
+export const API_FAVORITE_PRODUCTS = 'userfavorites';

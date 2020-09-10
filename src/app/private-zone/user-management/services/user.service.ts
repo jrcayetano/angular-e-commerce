@@ -4,6 +4,7 @@ import {
   API_PROFILE,
   API_PROFILE_EDIT,
   API_USER_ORDERS,
+  API_FAVORITE_PRODUCTS,
 } from './../../../consts/api';
 import { ProfileResponse } from '../../../models/profile-response.model';
 import { Observable, of } from 'rxjs';
@@ -31,5 +32,8 @@ export class UserService {
 
   getOrders(): Observable<any> {
     return this.http.get(`${environment.server_url}/${API_USER_ORDERS}`);
+  }
+  getFavorites(): Observable<any> {
+    return this.http.get(`${environment.server_url}/${API_FAVORITE_PRODUCTS}`);
   }
 }
