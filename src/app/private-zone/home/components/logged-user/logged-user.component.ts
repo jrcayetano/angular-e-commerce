@@ -8,6 +8,7 @@ import {
   LOGIN_PATH,
   USER_PATH,
   USER_ORDERS_PATH,
+  USER_FAVORITE_PRODUCTS_PATH,
 } from './../../../../consts/paths';
 @Component({
   selector: 'app-logged-user',
@@ -41,5 +42,10 @@ export class LoggedUserComponent implements OnInit {
 
   onOrdersClick() {
     this.router.navigate([`/${HOME_PATH}/${USER_PATH}/${USER_ORDERS_PATH}`]);
+  }
+  onFavoriteProductsClick() {
+    this.router.navigate([
+      `/${HOME_PATH}/${USER_PATH}/${USER_FAVORITE_PRODUCTS_PATH}`,
+    ]);
   }
 }

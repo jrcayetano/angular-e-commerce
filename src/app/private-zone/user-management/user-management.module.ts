@@ -1,3 +1,4 @@
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { StatesService } from './../../services/states.service';
 import { HttpClientModule } from '@angular/common/http';
 import { UserService } from './services/user.service';
@@ -12,6 +13,9 @@ import { UserOrdersComponent } from './user-orders/user-orders.component';
 import { UserOrdersItemComponent } from './user-orders-item/user-orders-item.component';
 
 import { UserOrdersProductComponent } from './user-orders-product/user-orders-product.component';
+import { UserFavoriteProductsComponent } from './user-favorite-products/user-favorite-products.component';
+import { FavoriteProductsListComponent } from './favorite-products-list/favorite-products-list.component';
+import { FavoriteProductComponent } from './favorite-product/favorite-product.component';
 
 @NgModule({
   declarations: [
@@ -20,12 +24,16 @@ import { UserOrdersProductComponent } from './user-orders-product/user-orders-pr
     UserOrdersComponent,
     UserOrdersItemComponent,
     UserOrdersProductComponent,
+    UserFavoriteProductsComponent,
+    FavoriteProductsListComponent,
+    FavoriteProductComponent,
   ],
   imports: [
     CommonModule,
     UserManagementRoutingModule,
     ReactiveFormsModule,
     HttpClientModule,
+    NgbModule,
   ],
   providers: [UserService, StatesService],
 })

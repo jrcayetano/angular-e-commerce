@@ -1,0 +1,39 @@
+<div class="favorite-product">
+  <div class="favorite-product__info">
+    <div class="favorite-product__info__image">
+      <img [src]="product.image" />
+    </div>
+    <div class="favorite-product__info__details">
+      <div class="favorite-product__info__details__name">
+        <a href="#">{{ product.name }}</a>
+      </div>
+      <div class="favorite-product__info__details__rating">
+        Valoraciones <span class="value">{{ product.rating }}</span>
+      </div>
+      <div class="favorite-product__info__details__price">
+        {{ product.price }} €
+      </div>
+    </div>
+  </div>
+  <div class="favorite-product__actions">
+    <div class="favorite-product__actions__date d-none d-sm-block">
+      Articulo añadido {{ product.addedDate }}
+    </div>
+    <div class="favorite-product__actions__buttons">
+      <button
+        type="button"
+        (click)="onAddToBasketClick()"
+        class="btn btn-warning btn-sm"
+      >
+        Añadir a la cesta
+      </button>
+      <button
+        type="button"
+        (click)="onDeleteClick()"
+        class="btn btn-danger btn-sm"
+      >
+        Eliminar
+      </button>
+    </div>
+  </div>
+</div>

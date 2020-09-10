@@ -1,0 +1,30 @@
+<div class="favorite-list border p-3">
+  <div class="favorite-list__groups">
+    <div class="favorite-list__groups__element selected bg-light">
+      <div class="favorite-list__groups__element__name">Favoritos 1</div>
+      <div class="favorite-list__groups__element__scope">privada</div>
+    </div>
+    <div class="favorite-list__groups__element bg-light">
+      <div class="favorite-list__groups__element__name">Favoritos 2</div>
+      <div class="favorite-list__groups__element__scope">pública</div>
+    </div>
+  </div>
+  <div class="favorite-list__table">
+    <div class="favorite-list__table__header">
+      <nav class="navbar navbar-light">
+        <input
+          class="form-control mr-sm-2"
+          type="search"
+          placeholder="Search"
+          aria-label="Search"
+        />
+      </nav>
+    </div>
+    <div class="favorite-list__table__body">
+      <app-favorite-product
+        *ngFor="let product of productList"
+        [product]="product"
+      ></app-favorite-product>
+    </div>
+  </div>
+</div>
