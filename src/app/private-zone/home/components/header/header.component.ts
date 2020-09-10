@@ -5,6 +5,7 @@ import {
   PRODUCTS_PATH,
   EDIT_PROFILE_PATH,
   USER_PATH,
+  USER_ORDERS_PATH,
 } from './../../../../consts/paths';
 
 @Component({
@@ -15,6 +16,7 @@ import {
 export class HeaderComponent implements OnInit {
   PRODUCTS_PATH = `/${PRODUCTS_PATH}`;
   EDIT_PROFILE_PATH = `/${USER_PATH}/${EDIT_PROFILE_PATH}`;
+  USER_ORDERS_PATH = `/${USER_PATH}/${USER_ORDERS_PATH}`;
   public isMenuCollapsed = true;
 
   constructor(private router: Router) {}

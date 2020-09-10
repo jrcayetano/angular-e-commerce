@@ -1,0 +1,30 @@
+.order-item__body__product-list {
+  & > .order-item__body__product:not(:first-child) {
+    border-top: 1px solid #efefef;
+  }
+}
+
+.order-item__body__product {
+  display: flex;
+  align-items: center;
+}
+.order-item__body__product__image {
+  padding: 1rem;
+  img {
+    max-width: 100px;
+    width: 100px;
+  }
+}
+
+.order-item__body__product__price {
+  color: red;
+}
+
+@media (max-width: 768px) {
+  .order-item__body__product {
+    flex-direction: column;
+  }
+  .order-item__body__product__info > * {
+    margin-bottom: 0.3rem;
+  }
+}

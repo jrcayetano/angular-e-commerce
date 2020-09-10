@@ -20,7 +20,7 @@ export interface OrderProduct {
   price: number;
   srcset: string;
   delivery: string;
-  sellet: OrderSeller;
+  seller: OrderSeller;
 }
 
 export interface OrderSeller {

@@ -36,7 +36,7 @@
       </div>
     </div>
     <div class="order-item__body__product-list">
-      <div
+      <!--  <div
         class="order-item__body__product"
         *ngFor="let product of order.products"
       >
@@ -57,7 +57,11 @@
             EUR {{ product.price }}
           </div>
         </div>
-      </div>
+      </div> -->
+      <app-user-orders-product
+        [product]="product"
+        *ngFor="let product of order.products"
+      ></app-user-orders-product>
     </div>
   </div>
 </div>
