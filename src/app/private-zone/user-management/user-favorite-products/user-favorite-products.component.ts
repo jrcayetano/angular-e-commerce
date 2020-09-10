@@ -1,3 +1,4 @@
+import { takeUntil } from 'rxjs/operators';
 import { Observable } from 'rxjs';
 import { FavoriteProduct } from './../../../models/favorite-product.model';
 import { AutoUnsubscribe } from './../../../utils/auto-unsubscribe';
@@ -22,6 +23,8 @@ export class UserFavoriteProductsComponent
   }
 
   private loadFavoriteProducts() {
-    this.favoriteList$ = this.userService.getFavorites();
+    this.favoriteList$ = this.userService
+      .getFavorites()
+      .pipe(takeUntil(this.autoUnsubscribe$));
   }
 }

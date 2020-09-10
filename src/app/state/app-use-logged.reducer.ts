@@ -7,6 +7,7 @@ export const initialState: any = {
   isLogged: true,
   username: 'jose',
   email: 'jose@email.com',
+  favoriteProducts: [],
 };
 
 export function userLoggedReducer(
@@ -20,6 +21,21 @@ export function userLoggedReducer(
         isLogged: true,
       };
     }
+    case UserLoggedActionsType.addFavoriteProduct: {
+      return {
+        ...state,
+        favoriteProducts: [...state.favoriteProducts, action.payload],
+      };
+    }
+    case UserLoggedActionsType.deleteFavoriteProduct: {
+      return {
+        ...state,
+        favoriteProducts: state.favoriteProducts.filter(
+          (product) => product.id !== action.payload
+        ),
+      };
+    }
+
     default:
       return state;
   }

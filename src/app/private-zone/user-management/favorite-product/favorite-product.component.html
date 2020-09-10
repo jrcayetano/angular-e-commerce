@@ -20,10 +20,20 @@
       Articulo añadido {{ product.addedDate }}
     </div>
     <div class="favorite-product__actions__buttons">
-      <button type="button" class="btn btn-warning btn-sm">
+      <button
+        type="button"
+        (click)="onAddToBasketClick()"
+        class="btn btn-warning btn-sm"
+      >
         Añadir a la cesta
       </button>
-      <button type="button" class="btn btn-danger btn-sm">Eliminar</button>
+      <button
+        type="button"
+        (click)="onDeleteClick()"
+        class="btn btn-danger btn-sm"
+      >
+        Eliminar
+      </button>
     </div>
   </div>
 </div>
