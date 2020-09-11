@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { takeUntil } from 'rxjs/operators';
 import { AutoUnsubscribe } from './../../utils/auto-unsubscribe';
 import { Store, select } from '@ngrx/store';
@@ -11,12 +12,14 @@ import { of, Observable } from 'rxjs';
 })
 export class HomeComponent extends AutoUnsubscribe implements OnInit {
   isBasketOpened$: Observable<boolean> = of(false);
-  constructor(private basketStore: Store<{ basket }>) {
+  constructor(private router: Router, private basketStore: Store<{ basket }>) {
     super();
   }
 
   ngOnInit(): void {
     this.subscribeBasketStore();
+
+    this.router.navigate(['products']);
   }
 
   private subscribeBasketStore() {
