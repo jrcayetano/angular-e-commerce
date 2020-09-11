@@ -1,0 +1,28 @@
+<div class="basket-list__products__item">
+  <div class="basket-list__products__image">
+    <img [src]="product.image" />
+  </div>
+  <div class="basket-list__products__info">
+    <div class="basket-list__products__info__name">{{ product.name }}</div>
+    <div class="basket-list__products__info__price">
+      EUR {{ product.price }}
+    </div>
+  </div>
+</div>
+
+<div class="basket-list__products__actions">
+  <form class="basket-list__products__actions__quantity" [formGroup]="form">
+    <label class="" for="quantityInput">Cant: </label>
+    <select
+      class=""
+      id="quantityInput"
+      (change)="onChangeQuantity($event.target.value)"
+      formControlName="quantity"
+    >
+      <option [value]="quantity" *ngFor="let quantity of quantitiesOptions">
+        {{ quantity }}
+      </option>
+    </select>
+  </form>
+  <button class="btn btn-light" (click)="onDeleteClick()">Eliminar</button>
+</div>
