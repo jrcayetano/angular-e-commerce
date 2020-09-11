@@ -1,3 +1,4 @@
+import { BasketToggle } from './../../../../state/basket.actions';
 import { AutoUnsubscribe } from './../../../../utils/auto-unsubscribe';
 import { Observable, of } from 'rxjs';
 import { Store, select } from '@ngrx/store';
@@ -21,6 +22,10 @@ export class BasketComponent
 
   ngOnInit(): void {
     this.subscriteToProductList();
+  }
+
+  onBasketClick() {
+    this.store.dispatch(new BasketToggle());
   }
 
   private subscriteToProductList() {

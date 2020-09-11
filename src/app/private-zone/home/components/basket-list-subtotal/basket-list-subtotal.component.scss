@@ -1,0 +1,17 @@
+.basket-list__total {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #efefef;
+}
+.basket-list__total__price {
+  text-align: center;
+  margin-bottom: 1rem;
+  font-size: 14px;
+}
+
+.quantity {
+  font-size: 15px;
+  font-weight: 700;
+  color: red;
+}

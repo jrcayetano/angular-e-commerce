@@ -1,0 +1,39 @@
+.basket-list__products__item {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  margin: 1rem 0;
+}
+
+.basket-list__products__image {
+  img {
+    max-width: 100px;
+  }
+}
+
+.basket-list__products__info {
+  display: flex;
+  flex-direction: column;
+}
+
+.basket-list__products__info {
+  font-size: 12px;
+}
+.basket-list__products__info__price {
+  color: red;
+  font-weight: 400;
+}
+
+.basket-list__products__actions__quantity {
+  display: flex;
+  align-items: center;
+  label {
+    margin: 0 1rem 0 0;
+  }
+}
+
+.basket-list__products__actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}

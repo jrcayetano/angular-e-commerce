@@ -3,5 +3,7 @@
     *ngFor="let product of products$ | async"
     [product]="product"
     (buy)="onBuyProduct($event)"
+    (favorite)="onFavoriteProduct($event)"
   ></app-product-card>
 </app-products-grid>
+<app-basket-list></app-basket-list>

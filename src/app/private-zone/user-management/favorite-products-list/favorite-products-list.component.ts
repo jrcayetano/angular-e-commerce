@@ -8,6 +8,7 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class FavoriteProductsListComponent implements OnInit {
   @Input() productList: FavoriteProduct[] = [];
+  searchTerm = '';
   constructor() {}
 
   ngOnInit(): void {}

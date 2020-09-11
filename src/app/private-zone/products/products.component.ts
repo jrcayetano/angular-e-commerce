@@ -1,3 +1,4 @@
+import { AddFavoriteProduct } from 'src/app/state/app-user-logged.actions';
 import { AddProduct } from './../../state/basket.actions';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
@@ -12,7 +13,11 @@ import { ProductCard } from 'src/app/models/product-card.model';
 })
 export class ProductsComponent implements OnInit {
   products$: Observable<ProductCard>;
-  constructor(private productsService: ProductsService, private store: Store) {}
+  constructor(
+    private productsService: ProductsService,
+    private basketStore: Store<{ basket }>,
+    private userLoggedStore: Store<{ userLogged }>
+  ) {}
 
   ngOnInit(): void {
     this.getProducts();
@@ -20,7 +25,12 @@ export class ProductsComponent implements OnInit {
 
   onBuyProduct(product: ProductCard): void {
     console.log(product);
-    this.store.dispatch(new AddProduct(product));
+    this.basketStore.dispatch(new AddProduct(product));
+  }
+
+  onFavoriteProduct(product: ProductCard): void {
+    console.log(product);
+    this.userLoggedStore.dispatch(new AddFavoriteProduct(product));
   }
 
   private getProducts(): void {

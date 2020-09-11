@@ -1,0 +1,8 @@
+<div class="basket-list__total">
+  <span class="basket-list__total__price"
+    >Subotal: <span class="quantity">EUR {{ total }} €</span></span
+  >
+  <button class="btn btn-warning" [disabled]="total === 0 ? true : false">
+    Tramitar pedido
+  </button>
+</div>

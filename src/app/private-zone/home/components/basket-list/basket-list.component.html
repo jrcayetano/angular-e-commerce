@@ -1,0 +1,9 @@
+<div class="basket-list">
+  <app-basket-list-subtotal [total]="subtotal"></app-basket-list-subtotal>
+  <div class="basket-list__products">
+    <app-basket-list-products
+      *ngFor="let product of basketList"
+      [product]="product"
+    ></app-basket-list-products>
+  </div>
+</div>
