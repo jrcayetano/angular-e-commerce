@@ -3,7 +3,7 @@ import { ɵangular_packages_platform_browser_dynamic_platform_browser_dynamic_a 
 import { ProductCardComponent } from '../private-zone/products/components/product-card/product-card.component';
 import { removeSummaryDuplicates } from '@angular/compiler';
 export const initialState: any = {
-  opened: true,
+  opened: false,
   productsList: [],
 };
 
