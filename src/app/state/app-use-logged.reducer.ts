@@ -24,7 +24,19 @@ export function userLoggedReducer(
     case UserLoggedActionsType.addFavoriteProduct: {
       return {
         ...state,
-        favoriteProducts: [...state.favoriteProducts, action.payload],
+        favoriteProducts: [
+          ...state.favoriteProducts,
+          {
+            ...action.payload,
+            addedDate: new Date().toLocaleString().split(',')[0],
+          },
+        ],
+      };
+    }
+    case UserLoggedActionsType.addFavoriteProductInBulk: {
+      return {
+        ...state,
+        favoriteProducts: [...state.favoriteProducts, ...action.payload],
       };
     }
     case UserLoggedActionsType.deleteFavoriteProduct: {

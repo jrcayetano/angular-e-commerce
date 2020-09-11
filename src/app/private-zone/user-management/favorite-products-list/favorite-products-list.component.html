@@ -17,12 +17,13 @@
           type="search"
           placeholder="Search"
           aria-label="Search"
+          [(ngModel)]="searchTerm"
         />
       </nav>
     </div>
     <div class="favorite-list__table__body">
       <app-favorite-product
-        *ngFor="let product of productList"
+        *ngFor="let product of productList | favoriteSearch: searchTerm"
         [product]="product"
       ></app-favorite-product>
     </div>

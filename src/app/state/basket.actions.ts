@@ -2,6 +2,7 @@ import { Action } from '@ngrx/store';
 
 export enum BasketActionsType {
   addProduct = '[BASKET - add product]',
+  basketToggle = '[BASKET - toggle]',
 }
 
 export class AddProduct implements Action {
@@ -9,4 +10,8 @@ export class AddProduct implements Action {
   constructor(public payload: any) {}
 }
 
-export type BasketActions = AddProduct;
+export class BasketToggle implements Action {
+  readonly type = BasketActionsType.basketToggle;
+}
+
+export type BasketActions = AddProduct | BasketToggle;

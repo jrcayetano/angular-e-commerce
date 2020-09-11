@@ -1,0 +1,32 @@
+<div class="basket-list">
+  <div class="basket-list__total">
+    <span class="basket-list__total__price"
+      >Subotal: <span class="quantity">EUR 430 €</span></span
+    >
+    <button class="btn btn-warning">Tramitar pedido</button>
+  </div>
+  <div class="basket-list__products">
+    <div class="basket-list__products__item">
+      <div class="basket-list__products__image">
+        <img
+          src="https://images-na.ssl-images-amazon.com/images/I/51FWAWxZ0hL._AC_SX679_.jpg"
+        />
+      </div>
+      <div class="basket-list__products__info">
+        <div class="basket-list__products__info__name">producto 1</div>
+        <div class="basket-list__products__info__price">EUR 10</div>
+      </div>
+    </div>
+  </div>
+  <div class="basket-list__products__actions">
+    <div class="basket-list__products__actions__quantity">
+      <label class="" for="quantityInput">Cant: </label>
+      <select class="" id="quantityInput">
+        <option *ngFor="let quantity of quantitiesOptions">
+          {{ quantity }}
+        </option>
+      </select>
+    </div>
+    <button class="btn btn-light">Eliminar</button>
+  </div>
+</div>

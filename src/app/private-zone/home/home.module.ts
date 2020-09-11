@@ -11,9 +11,10 @@ import { HeaderComponent } from './components/header/header.component';
 import { LoggedUserComponent } from './components/logged-user/logged-user.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { BasketComponent } from './components/basket/basket.component';
+import { BasketListComponent } from './components/basket-list/basket-list.component';
 
 @NgModule({
-  declarations: [HomeComponent, HeaderComponent, LoggedUserComponent, FooterComponent, BasketComponent],
+  declarations: [HomeComponent, HeaderComponent, LoggedUserComponent, FooterComponent, BasketComponent, BasketListComponent],
   imports: [CommonModule, HomeRoutingModule, FontAwesomeModule, NgbModule],
   exports: [],
 })

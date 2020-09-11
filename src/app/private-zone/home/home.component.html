@@ -1,7 +1,8 @@
 <div class="home">
   <app-header></app-header>
-  <main class="main-content">
+  <main class="main-content" [class.basket-opened]="isBasketOpened$ | async">
     <router-outlet></router-outlet>
+    <app-basket-list *ngIf="isBasketOpened$ | async"></app-basket-list>
   </main>
   <app-footer></app-footer>
 </div>

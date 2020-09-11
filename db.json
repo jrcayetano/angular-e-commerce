@@ -14,7 +14,8 @@
         "https://m.media-amazon.com/images/I/51NP0hfzakL._AC_UL800_FMwebp_QL65_.jpg 2.5x",
         "https://m.media-amazon.com/images/I/51NP0hfzakL._AC_UL960_FMwebp_QL65_.jpg 3x"
       ],
-      "delivery": "30 de Septiembre"
+      "delivery": "30 de Septiembre",
+      "mostseller": true
     },
     {
       "id": 2,
@@ -23,7 +24,8 @@
       "image": "https://picsum.photos/300/300?random=2",
       "price": 20,
       "srcset": [],
-      "delivery": "30 de Septiembre"
+      "delivery": "30 de Septiembre",
+      "mostseller": false
     },
     {
       "id": 3,
@@ -32,7 +34,8 @@
       "image": "https://picsum.photos/300/300?random=3",
       "price": 30,
       "srcset": [],
-      "delivery": "30 de Septiembre"
+      "delivery": "30 de Septiembre",
+      "mostseller": false
     },
     {
       "id": 4,
@@ -41,7 +44,8 @@
       "image": "https://picsum.photos/300/300?random=4",
       "price": 40,
       "srcset": [],
-      "delivery": "30 de Septiembre"
+      "delivery": "30 de Septiembre",
+      "mostseller": false
     },
     {
       "id": 5,
@@ -50,7 +54,8 @@
       "image": "https://picsum.photos/300/300?random=6",
       "price": 50,
       "srcset": [],
-      "delivery": "30 de Septiembre"
+      "delivery": "30 de Septiembre",
+      "mostseller": false
     },
     {
       "id": 6,
@@ -59,7 +64,19 @@
       "image": "https://picsum.photos/300/300?random=7",
       "price": 60,
       "srcset": [],
-      "delivery": "30 de Septiembre"
+      "delivery": "30 de Septiembre",
+      "mostseller": false
+    },
+    {
+      "id": 7,
+      "name": "Sony UBP-X800M2, Reproductor de BLU-Ray, 4K, Negro",
+      "description": "Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...",
+      "image": "https://images-na.ssl-images-amazon.com/images/I/51FWAWxZ0hL._AC_SX679_.jpg",
+      "price": 298,
+      "srcset": [],
+      "rating": "4",
+      "delivery": "30 de Septiembre",
+      "mostseller": false
     }
   ],
   "states": [
@@ -205,17 +222,5 @@
       ]
     }
   ],
-  "userfavorites": [
-    {
-      "id": 1,
-      "name": "Sony UBP-X800M2, Reproductor de BLU-Ray, 4K, Negro",
-      "description": "Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...",
-      "image": "https://images-na.ssl-images-amazon.com/images/I/51FWAWxZ0hL._AC_SX679_.jpg",
-      "price": 298,
-      "srcset": [],
-      "rating": "4",
-      "delivery": "30 de Septiembre",
-      "addedDate": "5 de septiembre de 2020"
-    }
-  ]
+  "userfavorites": []
 }

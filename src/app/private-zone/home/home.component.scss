@@ -7,4 +7,8 @@ $color_main_background: #eaeded;
   position: relative;
   min-height: 83.8vh;
   padding-bottom: 2rem;
+  &.basket-opened {
+    display: grid;
+    grid-template-columns: 0% auto 20%;
+  }
 }

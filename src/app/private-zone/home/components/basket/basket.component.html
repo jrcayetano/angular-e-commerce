@@ -1,4 +1,4 @@
-<button type="button" class="btn btn-light">
+<button type="button" class="btn btn-light" (click)="onBasketClick()">
   <fa-icon [icon]="faShoppingCart"></fa-icon>
   <span class="badge badge-light">{{ (productList$ | async).length }}</span>
 </button>

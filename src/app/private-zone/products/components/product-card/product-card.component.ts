@@ -10,6 +10,9 @@ import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
 export class ProductCardComponent implements OnInit {
   @Input() product: ProductCard;
   @Output() buy: EventEmitter<ProductCard> = new EventEmitter<ProductCard>();
+  @Output() favorite: EventEmitter<ProductCard> = new EventEmitter<
+    ProductCard
+  >();
   productPath = PRODUCTS_PATH;
   constructor() {}
 
@@ -17,5 +20,8 @@ export class ProductCardComponent implements OnInit {
 
   onBuyClick() {
     this.buy.emit({ ...this.product });
+  }
+  onFavoriteClick() {
+    this.favorite.emit({ ...this.product });
   }
 }
