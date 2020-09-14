@@ -4,11 +4,12 @@ import { MenuEnum } from './../../consts/menu.enum';
 import { Router, ActivatedRoute } from '@angular/router';
 import { AddFavoriteProduct } from 'src/app/state/app-user-logged.actions';
 import { AddProduct } from './../../state/basket.actions';
-import { Store } from '@ngrx/store';
-import { Observable } from 'rxjs';
+import { Store, select } from '@ngrx/store';
+import { Observable, of } from 'rxjs';
 import { ProductsService } from './services/products.service';
 import { Component, OnInit } from '@angular/core';
 import { ProductCard } from 'src/app/models/product-card.model';
+import { map, take } from 'rxjs/operators';
 
 @Component({
   selector: 'app-products',
@@ -18,6 +19,7 @@ import { ProductCard } from 'src/app/models/product-card.model';
 export class ProductsComponent implements OnInit {
   products$: Observable<ProductCard>;
   menuName = MenuEnum.Products;
+  isOffers = false;
   constructor(
     private productsService: ProductsService,
     private router: Router,
@@ -28,8 +30,8 @@ export class ProductsComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
+    this.subscribeToIsOffer();
     this.getProducts();
-    this.selectMenu();
   }
 
   onBuyProduct(product: ProductCard): void {
@@ -48,22 +50,44 @@ export class ProductsComponent implements OnInit {
 
   onFilterChange(formValues) {
     if (!(formValues instanceof Event)) {
-      const params: HttpParams = this.productsService.generateFilterSearch(
-        formValues
+      let params: HttpParams = this.productsService.generateFilterSearch(
+        formValues,
+        this.isOffers
       );
+      /*   console.log(this.isOffers);
+      if (this.isOffers) {
+        params.set('isOffer_ne', 'false');
+      } else {
+        params.set('isOffer_ne', 'true');
+      } */
+
+      /*     if (this.isOffers) {
+        params = this.productsService.addOfferFilter(params);
+      } */
+
       this.products$ = this.productsService.getAll(params);
-      console.log(
-        this.productsService.generateFilterSearch(formValues).toString()
-      );
     }
   }
 
   private getProducts(): void {
-    this.products$ = this.productsService.getAll();
+    let params: HttpParams;
+    if (this.isOffers) {
+      params = new HttpParams().set('isOffer_ne', 'false');
+    } else {
+      params = new HttpParams().set('isOffer_ne', 'true');
+    }
+    this.products$ = this.productsService.getAll(params);
   }
 
-  private selectMenu() {
-    console.log('aaaa', this.menuName);
-    this.appStore.dispatch(new SetMenu(this.menuName));
+  private subscribeToIsOffer() {
+    this.appStore
+      .pipe(select('app', 'selectedMenu'), take(1))
+      .subscribe((selectedMenu) => {
+        if (selectedMenu === MenuEnum.Offers) {
+          this.isOffers = true;
+        } else {
+          this.isOffers = false;
+        }
+      });
   }
 }

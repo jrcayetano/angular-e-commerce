@@ -1,10 +1,11 @@
+import { ProductsModule } from './../products/products.module';
+import { OffersModule } from './../offers/offers.module';
 import { UserManagementModule } from './../user-management/user-management.module';
 import { LoginModule } from './../../public-zone/login/login.module';
 import { RegisterModule } from './../../public-zone/register/register.module';
 import { HomeComponent } from './home.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { ProductsModule } from '../products/products.module';
 
 const routes: Routes = [
   {
@@ -21,6 +22,10 @@ const routes: Routes = [
       },
       {
         path: 'products',
+        loadChildren: () => ProductsModule,
+      },
+      {
+        path: 'offers',
         loadChildren: () => ProductsModule,
       },
       {

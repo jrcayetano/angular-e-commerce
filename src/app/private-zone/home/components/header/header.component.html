@@ -56,13 +56,9 @@
       <li
         class="nav-item"
         [class.active]="(selectedMenu$ | async) === productsMenu"
+        (click)="onSelectMenu(productsMenu)"
       >
-        <a
-          class="nav-link"
-          [routerLink]="[PRODUCTS_PATH]"
-          (click)="isMenuCollapsed = true"
-          >Products</a
-        >
+        <a class="nav-link" (click)="isMenuCollapsed = true">Products</a>
       </li>
       <!--  <li class="nav-item">
 
@@ -70,10 +66,12 @@
           >Search</a
         >
       </li> -->
-      <li class="nav-item">
-        <a class="nav-link" [routerLink]="'.'" (click)="isMenuCollapsed = true"
-          >Offers</a
-        >
+      <li
+        class="nav-item"
+        [class.active]="(selectedMenu$ | async) === offersMenu"
+        (click)="onSelectMenu(offersMenu)"
+      >
+        <a class="nav-link" (click)="isMenuCollapsed = true">Offers</a>
       </li>
     </ul>
   </div>

@@ -5,13 +5,18 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { StoreModule, ActionReducerMap, MetaReducer } from '@ngrx/store';
+import {
+  StoreModule,
+  ActionReducerMap,
+  MetaReducer,
+  ActionReducer,
+} from '@ngrx/store';
 import { userLoggedReducer } from './state/app-use-logged.reducer';
 import { basketReducer } from './state/basket.reducer';
 import { appReducer } from './state/app.reducers';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
-
+import { localStorageSync } from 'ngrx-store-localstorage';
 import { ReactiveFormsModule } from '@angular/forms';
 
 const reducers: ActionReducerMap<any> = {
@@ -20,7 +25,20 @@ const reducers: ActionReducerMap<any> = {
   app: appReducer,
 };
 
-export let metaReducers: Array<MetaReducer<any, any>> = [];
+export function localStoragesyncReducer(
+  reducer: ActionReducer<any>
+): ActionReducer<any> {
+  return localStorageSync({
+    keys: ['app'],
+    rehydrate: true,
+    storage: sessionStorage,
+  })(reducer);
+}
+
+// Import clearstate y meterlo en el array de metareducers
+export let metaReducers: Array<MetaReducer<any, any>> = [
+  localStoragesyncReducer,
+];
 
 @NgModule({
   declarations: [AppComponent],
