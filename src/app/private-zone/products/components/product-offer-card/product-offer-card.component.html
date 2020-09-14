@@ -30,6 +30,11 @@
       <span>{{ product?.reviews.length }}</span>
     </span>
   </div>
-  <!--   <button (click)="onBuyClick()">Buy</button>
-  <button (click)="onFavoriteClick()">favorito</button> -->
+  <button
+    class="btn btn-warning btn-block"
+    type="button"
+    (click)="addToBasket($event)"
+  >
+    Añadir a al cesta
+  </button>
 </div>

@@ -16,6 +16,7 @@ export interface ProductCard {
   seller: ProductSeller;
   discount: number;
   priceOffer: number;
+  quantity: number;
 }
 
 export interface ProductSeller {

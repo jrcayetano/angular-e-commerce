@@ -17,4 +17,9 @@ export class ProductOfferCardComponent
   }
 
   ngOnInit(): void {}
+
+  addToBasket(event: Event) {
+    event.stopPropagation();
+    this.buy.emit(this.product);
+  }
 }

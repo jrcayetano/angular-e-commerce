@@ -3,7 +3,10 @@ import { SetMenu } from './../../state/app.actios';
 import { MenuEnum } from './../../consts/menu.enum';
 import { Router, ActivatedRoute } from '@angular/router';
 import { AddFavoriteProduct } from 'src/app/state/app-user-logged.actions';
-import { AddProduct } from './../../state/basket.actions';
+import {
+  AddProduct,
+  IncremenProductQuantity,
+} from './../../state/basket.actions';
 import { Store, select } from '@ngrx/store';
 import { Observable, of } from 'rxjs';
 import { ProductsService } from './services/products.service';
@@ -17,7 +20,7 @@ import { map, take } from 'rxjs/operators';
   styleUrls: ['./products.component.scss'],
 })
 export class ProductsComponent implements OnInit {
-  products$: Observable<ProductCard>;
+  products$: Observable<ProductCard[]>;
   menuName = MenuEnum.Products;
   isOffers = false;
   constructor(
@@ -35,8 +38,23 @@ export class ProductsComponent implements OnInit {
   }
 
   onBuyProduct(product: ProductCard): void {
-    console.log(product);
-    this.basketStore.dispatch(new AddProduct(product));
+    this.basketStore
+      .pipe(select('basket', 'productsList'), take(1))
+      .subscribe((products: ProductCard[]) => {
+        const productFound = products.find(
+          (prod: ProductCard) => prod.id === product.id
+        );
+        if (productFound) {
+          this.basketStore.dispatch(
+            new IncremenProductQuantity({
+              productId: productFound.id,
+              quantity: productFound.quantity + 1,
+            })
+          );
+        } else {
+          this.basketStore.dispatch(new AddProduct(product));
+        }
+      });
   }
 
   onFavoriteProduct(product: ProductCard): void {
@@ -89,5 +107,9 @@ export class ProductsComponent implements OnInit {
           this.isOffers = false;
         }
       });
+  }
+
+  private productAlreadyExist(product: ProductCard) {
+    // return this.basketStore.pipe(select('basket','productsList' ), map( (productList: ProductCard[]) => productList.)
   }
 }
