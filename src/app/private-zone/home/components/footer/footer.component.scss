@@ -24,8 +24,12 @@ footer {
 }
 .footer-wrap {
   display: flex;
-  flex-direction: column;
+  // flex-direction: column;
   align-items: center;
+  justify-content: center;
+  margin-top: 1rem;
+  border-top: 1px solid;
+  padding-top: 1rem;
 }
 .footer-wrap__link--white {
   color: $color_footer-links;
@@ -33,6 +37,42 @@ footer {
 
 .footer-wrap__reserved-rights {
   color: $color_reserver-rights;
+}
+
+.footer {
+  color: white;
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center; */
+  margin: 0 auto;
+}
+.footer__contact {
+  flex-direction: row;
+  display: flex;
+  justify-content: space-around;
+}
+
+.column-title {
+  font-size: 16px;
+  font-weight: 400;
+  margin-bottom: 1rem;
+  display: block;
+}
+
+.footer__contact__information__address,
+.footer__contact__information__phone,
+.footer__contact__information__email,
+.footer__contact__information__time,
+.footer__contact__client__time,
+.footer__contact__client__email,
+.footer__contact__client__whatsapp {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 0.5rem;
+  .title-section {
+    font-weight: 400;
+    font-size: 14px;
+  }
 }
 
 @media (max-width: 768px) {

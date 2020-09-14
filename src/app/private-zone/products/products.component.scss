@@ -1,0 +1,21 @@
+.banner {
+  margin: 1rem 0;
+  img {
+    margin: 0 auto;
+    display: block;
+  }
+}
+
+.border-top-card {
+  padding-top: 1rem;
+  border-top: 2px solid #efefef;
+}
+
+.products-main {
+  display: grid;
+  grid-template-columns: 15% 75%;
+}
+
+app-product-filter {
+  margin-left: 25%;
+}

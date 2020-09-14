@@ -5,7 +5,7 @@
     </div>
     <div class="favorite-product__info__details">
       <div class="favorite-product__info__details__name">
-        <a href="#">{{ product.name }}</a>
+        <a [routerLink]="[productPath]">{{ product.name }}</a>
       </div>
       <div class="favorite-product__info__details__rating">
         Valoraciones <span class="value">{{ product.rating }}</span>

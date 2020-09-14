@@ -6,3 +6,9 @@
 app-logged-user {
   margin-right: 20px;
 }
+
+li {
+  &.active {
+    border-bottom: 1px solid gray;
+  }
+}

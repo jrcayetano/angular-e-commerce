@@ -1,0 +1,35 @@
+<div class="container">
+  <div class="row">
+    <div class="col w-100">
+      <h3 class="login-form__title">Detail</h3>
+      <div class="detail-section">
+        <app-product-detail-information
+          [product]="product"
+        ></app-product-detail-information>
+        <div class="action-section">
+          <div class="action-section__buy">
+            <!-- <span>Enviar a jose - Gerena 41860</span> -->
+            <button class="btn btn-warning btn-block" (click)="addToBasket()">
+              Añadir a al cesta
+            </button>
+          </div>
+          <div class="action-section__whislist">
+            <button
+              class="btn btn-secondary btn-block"
+              (click)="addToFavorite()"
+            >
+              Añadir a favoritos
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="detail-section__reviews">
+        <h5>Principales reseñas de España</h5>
+        <app-product-detail-reviews
+          *ngFor="let review of product?.reviews"
+          [review]="review"
+        ></app-product-detail-reviews>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,11 @@
+<ng-container *ngIf="numberPart > 0">
+  <ng-container
+    *ngFor="let starNumber of [].constructor(starsNumber); let i = index"
+  >
+    <fa-icon *ngIf="i < numberPart" [icon]="star"></fa-icon>
+  </ng-container>
+</ng-container>
+
+<ng-container #halfPart>
+  <fa-icon *ngIf="decimalPart > 0" [icon]="starHalf"></fa-icon>
+</ng-container>
