@@ -18,6 +18,8 @@ import { ProductDetailReviewsComponent } from './components/product-detail-revie
 
 import { ReactiveFormsModule } from '@angular/forms';
 
+import { ProductOfferCardComponent } from './components/product-offer-card/product-offer-card.component';
+
 @NgModule({
   declarations: [
     ProductsComponent,
@@ -27,6 +29,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     ProductDetailComponent,
     ProductDetailInformationComponent,
     ProductDetailReviewsComponent,
+
+    ProductOfferCardComponent,
   ],
   imports: [
     CommonModule,

@@ -13,4 +13,12 @@ export interface ProductCard {
   stock: number;
   category: string;
   reviews: ProductDetailReview[];
+  seller: ProductSeller;
+  discount: number;
+  priceOffer: number;
+}
+
+export interface ProductSeller {
+  name: string;
+  profile: string;
 }

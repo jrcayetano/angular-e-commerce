@@ -7,14 +7,28 @@
 <div class="products-main">
   <app-product-filter (change)="onFilterChange($event)"></app-product-filter>
   <app-products-grid>
-    <app-product-card
-      (click)="onCardClick(product)"
-      *ngFor="let product of products$ | async; let i = index"
-      [product]="product"
-      (buy)="onBuyProduct($event)"
-      (favorite)="onFavoriteProduct($event)"
-      [class.border-top-card]="i !== 0 && i !== 1 && i !== 2"
-    ></app-product-card>
+    <ng-container *ngIf="!isOffers; else productOfferCard">
+      <app-product-card
+        (click)="onCardClick(product)"
+        *ngFor="let product of products$ | async; let i = index"
+        [product]="product"
+        (buy)="onBuyProduct($event)"
+        (favorite)="onFavoriteProduct($event)"
+        [class.border-top-card]="i !== 0 && i !== 1 && i !== 2"
+      ></app-product-card>
+    </ng-container>
   </app-products-grid>
   <app-basket-list></app-basket-list>
 </div>
+
+<ng-template #productOfferCard>
+  <app-product-offer-card
+    (click)="onCardClick(product)"
+    *ngFor="let product of products$ | async; let i = index"
+    [product]="product"
+    (buy)="onBuyProduct($event)"
+    (favorite)="onFavoriteProduct($event)"
+    [class.border-top-card]="i !== 0 && i !== 1 && i !== 2"
+  >
+  </app-product-offer-card>
+</ng-template>
