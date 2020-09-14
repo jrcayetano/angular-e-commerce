@@ -9,6 +9,7 @@
         required
         formControlName="username"
         [ngClass]="{ 'is-invalid': submitted && f.username.errors }"
+        disabled
       />
       <div *ngIf="submitted && f.username.errors" class="invalid-feedback">
         <div *ngIf="f.username.errors.required">Username is required</div>

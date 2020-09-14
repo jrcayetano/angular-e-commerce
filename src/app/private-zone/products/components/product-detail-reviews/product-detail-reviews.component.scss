@@ -1,0 +1,34 @@
+.product-detail-review {
+  margin-bottom: 1rem;
+}
+.product-detail-review__user-information {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.product-detail-review__user-information__image {
+  width: 40px;
+  margin-right: 1rem;
+}
+
+.product-detail-review__user-information__name,
+.product-detail-review__rating__title,
+.product-detail-review__rating__date,
+.product-detail-review__rating__description {
+  font-size: 13px;
+}
+
+.product-detail-review__rating__title {
+  app-rating-star {
+    color: #0066c0;
+    margin-right: 1rem;
+  }
+  span {
+    font-weight: 700;
+  }
+}
+.product-detail-review__rating__date {
+  color: 555;
+  margin-bottom: 0.5rem;
+}

@@ -1,0 +1,23 @@
+<div class="product-detail-review">
+  <div class="product-detail-review__user-information">
+    <img
+      class="product-detail-review__user-information__image"
+      [src]="review?.user?.image"
+    />
+    <span class="product-detail-review__user-information__name">{{
+      review?.user?.name
+    }}</span>
+  </div>
+  <div class="product-detail-review__rating">
+    <div class="product-detail-review__rating__title">
+      <app-rating-star [rating]="review?.rating"></app-rating-star>
+      <span>{{ review?.title }}</span>
+    </div>
+    <div class="product-detail-review__rating__date">
+      <span>Revisado en España el {{ review?.date }}</span>
+    </div>
+    <div class="product-detail-review__rating__description">
+      {{ review?.description }}
+    </div>
+  </div>
+</div>

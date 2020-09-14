@@ -1,5 +1,6 @@
 .product-card {
   max-width: 200px;
+
   a {
     display: flex;
     flex-direction: column;
@@ -22,9 +23,21 @@
   color: black;
   font-size: 15px;
 }
+.product-card__info__rating {
+  font-size: 15px;
+  display: block;
+  text-align: center;
+  app-rating-star {
+    margin-right: 0.5rem;
+  }
+}
 
 .product-card__info__title {
   font-weight: 700;
+  word-wrap: break-word;
+  max-height: 84px;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .product-card__info__description,
@@ -42,4 +55,7 @@
 .product-card__image {
   display: flex;
   justify-content: center;
+  img {
+    max-height: 150px;
+  }
 }

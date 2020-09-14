@@ -19,7 +19,7 @@ export class HomeComponent extends AutoUnsubscribe implements OnInit {
   ngOnInit(): void {
     this.subscribeBasketStore();
 
-    this.router.navigate(['products']);
+    // this.router.navigate(['products']);
   }
 
   private subscribeBasketStore() {

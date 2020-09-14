@@ -1,0 +1,21 @@
+<div class="product-detail-information">
+  <div class="product-detail-information__image">
+    <img class="img-fluid" [src]="product?.image" />
+  </div>
+  <div class="product-detail-information__data">
+    <div class="product-detail-information____data__name">
+      {{ product?.name }}
+    </div>
+    <div class="product-detail-information__data__rating">
+      <span class="product-detail-information__data__rating__stars">
+        <app-rating-star [rating]="product?.rating"></app-rating-star>
+      </span>
+      <span> {{ product?.reviews?.length }}</span>
+    </div>
+    <div class="product-detail-information__extra-info">
+      <ul>
+        <li *ngFor="let info of product?.extraInformation">{{ info }}</li>
+      </ul>
+    </div>
+  </div>
+</div>

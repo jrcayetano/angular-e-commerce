@@ -53,7 +53,10 @@
     </ul>
     <h4 class="d-block d-lg-none">Shop</h4>
     <ul class="navbar-nav">
-      <li class="nav-item">
+      <li
+        class="nav-item"
+        [class.active]="(selectedMenu$ | async) === productsMenu"
+      >
         <a
           class="nav-link"
           [routerLink]="[PRODUCTS_PATH]"
