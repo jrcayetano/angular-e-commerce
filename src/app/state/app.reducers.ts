@@ -3,6 +3,7 @@ import { AppActions, AppActionsType } from './app.actios';
 
 export const initialState: any = {
   selectedMenu: '',
+  token: '',
 };
 
 export function appReducer(state = initialState, action: AppActions) {
@@ -11,6 +12,12 @@ export function appReducer(state = initialState, action: AppActions) {
       return {
         ...state,
         selectedMenu: action.payload,
+      };
+    }
+    case AppActionsType.setToken: {
+      return {
+        ...state,
+        token: action.payload,
       };
     }
     default:

@@ -19,6 +19,8 @@ import {
   SimpleChange,
   SimpleChanges,
   ChangeDetectionStrategy,
+  Output,
+  EventEmitter,
 } from '@angular/core';
 
 @Component({
@@ -33,6 +35,7 @@ export class UserProfileFormComponent
   form: FormGroup;
   submitted = false;
   @Input() profile: ProfileResponse;
+  @Output() submit: EventEmitter<any> = new EventEmitter<any>();
   constructor(
     private formBuilder: FormBuilder,
     private statesService: StatesService,
@@ -52,7 +55,8 @@ export class UserProfileFormComponent
     }
   }
 
-  onSubmit(): void {
+  onSubmit(event: Event): void {
+    event.stopPropagation();
     console.log(this.form);
     this.submitted = true;
     if (this.form.invalid) {
@@ -91,9 +95,6 @@ export class UserProfileFormComponent
   }
 
   private updateProfile() {
-    this.userService.updateProfile(this.form.value).subscribe((response) => {
-      if (response) {
-      }
-    });
+    this.submit.emit(this.form.value);
   }
 }

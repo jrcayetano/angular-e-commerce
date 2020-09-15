@@ -1,3 +1,4 @@
+import { Store, select } from '@ngrx/store';
 import { takeUntil } from 'rxjs/operators';
 import { AutoUnsubscribe } from './../../../utils/auto-unsubscribe';
 import { Observable } from 'rxjs';
@@ -12,17 +13,35 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UserProfileComponent extends AutoUnsubscribe implements OnInit {
   userProfile$: Observable<ProfileResponse>;
-  constructor(private userService: UserService) {
+  userId: number;
+  password: string;
+  constructor(
+    private userService: UserService,
+    private loggedUser: Store<{ userLogged }>
+  ) {
     super();
   }
 
   ngOnInit(): void {
     this.getUserProfile();
+    this.getUserId();
+  }
+
+  onSubmit(userProfile) {
+    console.log('userProfile', userProfile);
+    this.userService
+      .updateProfile(userProfile, this.userId, this.password)
+      .subscribe((response) => {});
   }
 
   private getUserProfile() {
-    this.userProfile$ = this.userService
-      .getProfile()
-      .pipe(takeUntil(this.autoUnsubscribe$));
+    this.userProfile$ = this.loggedUser.pipe(select('userLogged', 'profile'));
+  }
+
+  private getUserId() {
+    this.userProfile$.subscribe((profile) => {
+      this.userId = profile.id;
+      this.password = profile.repassword;
+    });
   }
 }

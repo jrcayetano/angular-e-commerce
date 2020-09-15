@@ -4,6 +4,7 @@
       <h3 class="login-form__title">Edit profile</h3>
       <app-user-profile-form
         [profile]="userProfile$ | async"
+        (submit)="onSubmit($event)"
       ></app-user-profile-form>
     </div>
   </div>

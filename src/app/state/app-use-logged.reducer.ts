@@ -4,10 +4,11 @@ import {
   SetIsLogged,
 } from './app-user-logged.actions';
 export const initialState: any = {
-  isLogged: true,
-  username: 'jose',
-  email: 'jose@email.com',
+  isLogged: false,
+  username: '',
+  email: '',
   favoriteProducts: [],
+  profile: {},
 };
 
 export function userLoggedReducer(
@@ -45,6 +46,25 @@ export function userLoggedReducer(
         favoriteProducts: state.favoriteProducts.filter(
           (product) => product.id !== action.payload
         ),
+      };
+    }
+    case UserLoggedActionsType.setUsername: {
+      return {
+        ...state,
+        username: action.payload,
+      };
+    }
+    case UserLoggedActionsType.setEmail: {
+      return {
+        ...state,
+        email: action.payload,
+      };
+    }
+
+    case UserLoggedActionsType.setProfile: {
+      return {
+        ...state,
+        profile: action.payload,
       };
     }
 
