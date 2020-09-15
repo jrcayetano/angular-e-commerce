@@ -6,9 +6,17 @@ $color_main_background: #eaeded;
 .main-content {
   position: relative;
   min-height: 83.8vh;
-  padding-bottom: 2rem;
+  // padding-bottom: 2rem;
   &.basket-opened {
     display: grid;
     grid-template-columns: 0% auto 20%;
+  }
+}
+
+@media (max-width: 992px) {
+  .main-content {
+    &.basket-opened {
+      grid-template-columns: 0% auto 30%;
+    }
   }
 }
