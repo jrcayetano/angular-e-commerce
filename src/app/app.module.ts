@@ -29,7 +29,7 @@ export function localStoragesyncReducer(
   reducer: ActionReducer<any>
 ): ActionReducer<any> {
   return localStorageSync({
-    keys: ['app'],
+    keys: ['app', 'userLogged'],
     rehydrate: true,
     storage: sessionStorage,
   })(reducer);

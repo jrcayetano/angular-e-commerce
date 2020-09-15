@@ -1,3 +1,4 @@
+import { environment } from './../../../../environments/environment';
 import { StatesService } from './../../../services/states.service';
 import { Injectable } from '@angular/core';
 
@@ -12,8 +13,12 @@ export class RegisterService {
   constructor(private http: HttpClient, private statesService: StatesService) {}
 
   register(registerRequest: RegisterRequest): Observable<any> {
-    console.log('sending...', registerRequest);
-    return of(null);
+    return this.http.post(
+      `${environment.server_url}/register`,
+      registerRequest
+    );
+    /*  console.log('sending...', registerRequest);
+    return of(null); */
     /* */
   }
   getState(): Observable<any> {

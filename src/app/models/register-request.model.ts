@@ -7,5 +7,5 @@ export interface RegisterRequest {
   zip: string;
   city: string;
   state: string;
-  birthday: string;
+  birthday?: string;
 }

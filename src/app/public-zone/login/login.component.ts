@@ -1,4 +1,10 @@
-import { SetIsLogged } from './../../state/app-user-logged.actions';
+import { SetToken } from './../../state/app.actios';
+import {
+  SetIsLogged,
+  SetEmail,
+  SetProfile,
+  SetUsername,
+} from './../../state/app-user-logged.actions';
 import { LoginService } from './services/login.service';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
@@ -6,6 +12,7 @@ import { Store, select } from '@ngrx/store';
 import { Router } from '@angular/router';
 import { take } from 'rxjs/operators';
 import { HOME_PATH } from 'src/app/consts/paths';
+import { pipe } from 'rxjs';
 
 @Component({
   selector: 'app-login',
@@ -18,8 +25,9 @@ export class LoginComponent implements OnInit {
   constructor(
     private formBuilder: FormBuilder,
     private loginService: LoginService,
-    private store: Store,
-    private router: Router
+    private userLoggedStore: Store<{ userLogged }>,
+    private router: Router,
+    private appStore: Store<{ app }>
   ) {}
 
   ngOnInit(): void {
@@ -33,10 +41,7 @@ export class LoginComponent implements OnInit {
         .login(this.form.value)
         .pipe(take(1))
         .subscribe((response) => {
-          if (response) {
-            this.store.dispatch(new SetIsLogged());
-            this.router.navigate([`${HOME_PATH}`]);
-          }
+          this.getUserLoggedData(response);
         });
     }
   }
@@ -47,8 +52,29 @@ export class LoginComponent implements OnInit {
 
   private generateFormBuilder(): FormGroup {
     return this.formBuilder.group({
-      username: ['', [Validators.required]],
+      email: ['', [Validators.required]],
       password: ['', [Validators.required]],
     });
+  }
+
+  private getUserLoggedData(response) {
+    if (response && response.accessToken) {
+      this.loginService
+        .getUserByEmail(this.form.value.email)
+        .pipe(take(1))
+        .subscribe((userData) => {
+          this.saveLoggedUserDataInStore(response, userData);
+          this.router.navigate([`${HOME_PATH}`]);
+        });
+    }
+  }
+
+  private saveLoggedUserDataInStore(response, userdata) {
+    console.log(response, userdata);
+    this.userLoggedStore.dispatch(new SetProfile(userdata[0]));
+    this.appStore.dispatch(new SetToken(response.accessToken));
+    this.userLoggedStore.dispatch(new SetIsLogged());
+    this.userLoggedStore.dispatch(new SetEmail(this.form.value.email));
+    this.userLoggedStore.dispatch(new SetUsername(userdata[0].username));
   }
 }

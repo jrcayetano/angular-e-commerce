@@ -2,6 +2,9 @@ import { Action } from '@ngrx/store';
 
 export enum UserLoggedActionsType {
   setIsLogged = '[User logged - setIsLogged]',
+  setUsername = '[User logged - setUsername]',
+  setEmail = '[User logged - setEmail]',
+  setProfile = '[User logged - setProfile]',
   addFavoriteProduct = '[User logged - addFavoriteProduct]',
   addFavoriteProductInBulk = '[User logged - addFavoriteProductInBulk]',
   deleteFavoriteProduct = '[User logged - deleteFavoriteProduct]',
@@ -9,6 +12,21 @@ export enum UserLoggedActionsType {
 
 export class SetIsLogged implements Action {
   readonly type = UserLoggedActionsType.setIsLogged;
+}
+
+export class SetUsername implements Action {
+  readonly type = UserLoggedActionsType.setUsername;
+  constructor(public payload: any) {}
+}
+
+export class SetEmail implements Action {
+  readonly type = UserLoggedActionsType.setEmail;
+  constructor(public payload: any) {}
+}
+
+export class SetProfile implements Action {
+  readonly type = UserLoggedActionsType.setProfile;
+  constructor(public payload: any) {}
 }
 
 export class AddFavoriteProduct implements Action {
@@ -30,4 +48,7 @@ export type UserLoggedActions =
   | SetIsLogged
   | AddFavoriteProduct
   | AddFavoriteProductInBulk
-  | DeleteFavoriteProduct;
+  | DeleteFavoriteProduct
+  | SetUsername
+  | SetEmail
+  | SetProfile;

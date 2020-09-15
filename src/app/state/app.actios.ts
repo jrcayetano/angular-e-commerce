@@ -2,6 +2,7 @@ import { Action } from '@ngrx/store';
 
 export enum AppActionsType {
   setMenu = '[APP GENERAL - setMenu]',
+  setToken = '[APP GENERAL - setToken]',
 }
 
 export class SetMenu implements Action {
@@ -9,4 +10,9 @@ export class SetMenu implements Action {
   constructor(public payload: any) {}
 }
 
-export type AppActions = SetMenu;
+export class SetToken implements Action {
+  readonly type = AppActionsType.setToken;
+  constructor(public payload: any) {}
+}
+
+export type AppActions = SetMenu | SetToken;
