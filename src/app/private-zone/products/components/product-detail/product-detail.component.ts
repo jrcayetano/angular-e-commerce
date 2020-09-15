@@ -1,3 +1,4 @@
+import { ToastService } from './../../../shared/shared/services/toast.service';
 import { ActivatedRoute, ChildActivationStart } from '@angular/router';
 import { ProductsService } from './../../services/products.service';
 import { AddProduct } from './../../../../state/basket.actions';
@@ -17,7 +18,8 @@ export class ProductDetailComponent implements OnInit {
     private basketStore: Store<{ basket }>,
     private userLogedStore: Store<{ userLogged }>,
     private productService: ProductsService,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private toastService: ToastService
   ) {}
 
   ngOnInit(): void {
@@ -30,7 +32,17 @@ export class ProductDetailComponent implements OnInit {
   }
 
   addToBasket() {
-    this.basketStore.dispatch(new AddProduct(this.product));
+    if (this.product.stock) {
+      this.basketStore.dispatch(new AddProduct(this.product));
+      return;
+    }
+    this.toastService.show(
+      'Lo sentimos, no disponemos de stock de éste producto',
+      {
+        classname: 'bg-danger text-light',
+        delay: 3000,
+      }
+    );
   }
 
   addToFavorite() {

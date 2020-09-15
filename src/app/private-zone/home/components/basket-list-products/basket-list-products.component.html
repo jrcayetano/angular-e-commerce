@@ -5,7 +5,7 @@
   <div class="basket-list__products__info">
     <div class="basket-list__products__info__name">{{ product.name }}</div>
     <div class="basket-list__products__info__price">
-      EUR {{ product.price }}
+      EUR {{ product.isOffer ? product.priceOffer : product.price }}
     </div>
   </div>
 </div>

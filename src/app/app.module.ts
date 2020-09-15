@@ -1,3 +1,4 @@
+import { SharedModule } from './private-zone/shared/shared/shared.module';
 import { StatesService } from './services/states.service';
 import { HomeModule } from './private-zone/home/home.module';
 import { BrowserModule } from '@angular/platform-browser';
@@ -44,6 +45,9 @@ export let metaReducers: Array<MetaReducer<any, any>> = [
   declarations: [AppComponent],
   imports: [
     BrowserModule,
+    SharedModule,
+    NgbModule,
+
     AppRoutingModule,
     ReactiveFormsModule,
     StoreModule.forRoot(reducers, { metaReducers }),
