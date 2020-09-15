@@ -1,3 +1,4 @@
+import { ToastService } from './../../private-zone/shared/shared/services/toast.service';
 import { SetToken } from './../../state/app.actios';
 import {
   SetIsLogged,
@@ -13,6 +14,7 @@ import { Router } from '@angular/router';
 import { take } from 'rxjs/operators';
 import { HOME_PATH } from 'src/app/consts/paths';
 import { pipe } from 'rxjs';
+import { HttpErrorResponse } from '@angular/common/http';
 
 @Component({
   selector: 'app-login',
@@ -27,7 +29,8 @@ export class LoginComponent implements OnInit {
     private loginService: LoginService,
     private userLoggedStore: Store<{ userLogged }>,
     private router: Router,
-    private appStore: Store<{ app }>
+    private appStore: Store<{ app }>,
+    private toastService: ToastService
   ) {}
 
   ngOnInit(): void {
@@ -40,9 +43,16 @@ export class LoginComponent implements OnInit {
       this.loginService
         .login(this.form.value)
         .pipe(take(1))
-        .subscribe((response) => {
-          this.getUserLoggedData(response);
-        });
+        .subscribe(
+          (response) => {
+            this.getUserLoggedData(response);
+          },
+          (errorResponse: HttpErrorResponse) =>
+            this.toastService.show(errorResponse.error, {
+              classname: 'bg-danger text-light',
+              delay: 3000,
+            })
+        );
     }
   }
 

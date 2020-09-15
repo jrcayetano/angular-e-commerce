@@ -1,3 +1,4 @@
+import { ToastService } from './../shared/shared/services/toast.service';
 import { HttpParams } from '@angular/common/http';
 import { SetMenu } from './../../state/app.actios';
 import { MenuEnum } from './../../consts/menu.enum';
@@ -29,7 +30,8 @@ export class ProductsComponent implements OnInit {
     private route: ActivatedRoute,
     private basketStore: Store<{ basket }>,
     private userLoggedStore: Store<{ userLogged }>,
-    private appStore: Store<{ app }>
+    private appStore: Store<{ app }>,
+    private toastService: ToastService
   ) {}
 
   ngOnInit(): void {

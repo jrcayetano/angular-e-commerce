@@ -28,7 +28,11 @@ export class BasketListComponent extends AutoUnsubscribe implements OnInit {
       .subscribe((products: any[]) => {
         this.basketList = [...products];
         this.subtotal = products
-          .map((product) => product.price * product.quantity)
+          .map((product) =>
+            product.isOffer
+              ? product.priceOffer * product.quantity
+              : product.price * product.quantity
+          )
           .reduce((product1, product2) => product1 + product2, 0);
       });
   }

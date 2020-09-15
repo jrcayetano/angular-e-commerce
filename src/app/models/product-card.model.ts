@@ -17,6 +17,7 @@ export interface ProductCard {
   discount: number;
   priceOffer: number;
   quantity: number;
+  isOffer: boolean;
 }
 
 export interface ProductSeller {
