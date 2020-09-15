@@ -1,4 +1,9 @@
-<div class="product-filter">
+<div class="product-filter" [class.isOpened]="isOpened">
+  <div class="product-filter__header d-block d-lg-none">
+    <button class="btn btn-link" (click)="onCloseClick()">
+      <fa-icon [icon]="faCross"></fa-icon>
+    </button>
+  </div>
   <form [formGroup]="form">
     <div class="form-row">
       <div class="col form-group">
@@ -104,3 +109,6 @@
     </div>
   </form>
 </div>
+<button class="btn btn-light d-block d-lg-none" (click)="filter()">
+  Filtro
+</button>

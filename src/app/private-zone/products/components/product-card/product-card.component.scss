@@ -59,3 +59,9 @@
     max-height: 150px;
   }
 }
+
+@media (max-width: 576px) {
+  .product-card__badge {
+    margin: 0 auto;
+  }
+}

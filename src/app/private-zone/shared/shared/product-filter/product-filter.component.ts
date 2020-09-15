@@ -1,3 +1,4 @@
+import { faTimes } from '@fortawesome/free-solid-svg-icons';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { filter, map } from 'rxjs/operators';
@@ -10,6 +11,8 @@ import { filter, map } from 'rxjs/operators';
 export class ProductFilterComponent implements OnInit {
   form: FormGroup;
   @Output() change: EventEmitter<any> = new EventEmitter<any>();
+  faCross = faTimes;
+  isOpened = false;
   constructor(private fb: FormBuilder) {}
 
   ngOnInit(): void {
@@ -26,6 +29,13 @@ export class ProductFilterComponent implements OnInit {
 
   onStarsClick(starsQuantity = 0) {
     this.form.get('rating').setValue(starsQuantity);
+  }
+
+  onCloseClick() {
+    this.isOpened = false;
+  }
+  filter() {
+    this.isOpened = true;
   }
 
   private generateForm() {
