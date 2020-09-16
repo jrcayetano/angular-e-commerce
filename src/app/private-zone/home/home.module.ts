@@ -1,3 +1,5 @@
+import { OrdersService } from './services/orders.service';
+import { HttpClientModule } from '@angular/common/http';
 import { LoginComponent } from './../../public-zone/login/login.component';
 import { LoginModule } from './../../public-zone/login/login.module';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
@@ -34,7 +36,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     NgbModule,
     FormsModule,
     ReactiveFormsModule,
+    HttpClientModule,
   ],
   exports: [],
+  providers: [OrdersService],
 })
 export class HomeModule {}

@@ -9,6 +9,7 @@ export const initialState: any = {
   email: '',
   favoriteProducts: [],
   profile: {},
+  orders: [],
 };
 
 export function userLoggedReducer(
@@ -65,6 +66,12 @@ export function userLoggedReducer(
       return {
         ...state,
         profile: action.payload,
+      };
+    }
+    case UserLoggedActionsType.addOrder: {
+      return {
+        ...state,
+        orders: [...state.orders, { ...action.payload }],
       };
     }
 

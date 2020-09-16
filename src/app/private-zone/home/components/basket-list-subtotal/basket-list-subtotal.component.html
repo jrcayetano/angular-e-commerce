@@ -3,7 +3,11 @@
     >Subotal:
     <span class="quantity">EUR {{ total | number: "1.1-2" }} €</span></span
   >
-  <button class="btn btn-warning" [disabled]="total === 0 ? true : false">
+  <button
+    class="btn btn-warning"
+    [disabled]="total === 0 ? true : false"
+    (click)="onBuy($event)"
+  >
     Tramitar pedido
   </button>
 </div>

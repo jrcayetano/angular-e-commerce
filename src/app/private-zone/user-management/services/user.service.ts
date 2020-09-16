@@ -8,7 +8,7 @@ import {
 } from './../../../consts/api';
 import { ProfileResponse } from '../../../models/profile-response.model';
 import { Observable, of } from 'rxjs';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
 @Injectable({
@@ -39,7 +39,12 @@ export class UserService {
   }
 
   getOrders(): Observable<any> {
-    return this.http.get(`${environment.server_url}/${API_USER_ORDERS}`);
+    const params: HttpParams = new HttpParams()
+      .set('_sort', 'id')
+      .set('_order', 'desc');
+    return this.http.get(`${environment.server_url}/${API_USER_ORDERS}`, {
+      params,
+    });
   }
   getFavorites(): Observable<any> {
     return this.http.get(`${environment.server_url}/${API_FAVORITE_PRODUCTS}`);

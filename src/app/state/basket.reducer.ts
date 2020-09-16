@@ -43,6 +43,12 @@ export function basketReducer(state = initialState, action: BasketActions) {
         ),
       };
     }
+    case BasketActionsType.clearBasket: {
+      return {
+        ...state,
+        productsList: [],
+      };
+    }
     default:
       return state;
   }

@@ -9,8 +9,4 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'e-commerce';
   constructor(private toastService: ToastService) {}
-
-  test() {
-    this.toastService.show('aaaaaavbvvvv', { delay: 1000 });
-  }
 }
