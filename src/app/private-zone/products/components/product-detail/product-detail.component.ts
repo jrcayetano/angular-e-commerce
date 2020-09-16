@@ -47,5 +47,9 @@ export class ProductDetailComponent implements OnInit {
 
   addToFavorite() {
     this.userLogedStore.dispatch(new AddFavoriteProduct(this.product));
+    this.toastService.show('Producto agregado correctamente', {
+      classname: 'bg-success text-light',
+      delay: 3000,
+    });
   }
 }

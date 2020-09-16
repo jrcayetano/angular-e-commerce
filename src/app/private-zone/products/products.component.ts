@@ -22,7 +22,8 @@ import { map, take } from 'rxjs/operators';
 })
 export class ProductsComponent implements OnInit {
   products$: Observable<ProductCard[]>;
-  menuName = MenuEnum.Products;
+  productName = MenuEnum.Products;
+  offersName = MenuEnum.Offers;
   isOffers = false;
   constructor(
     private productsService: ProductsService,
@@ -37,6 +38,8 @@ export class ProductsComponent implements OnInit {
   ngOnInit(): void {
     this.subscribeToIsOffer();
     this.getProducts();
+    const menuName = this.isOffers ? this.offersName : this.productName;
+    this.appStore.dispatch(new SetMenu(menuName));
   }
 
   onBuyProduct(product: ProductCard): void {
