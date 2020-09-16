@@ -1,10 +1,11 @@
 import { OrderItem } from './../../../models/user-order-item.model';
-import { takeUntil } from 'rxjs/operators';
+import { takeUntil, map } from 'rxjs/operators';
 
 import { AutoUnsubscribe } from './../../../utils/auto-unsubscribe';
 import { UserService } from './../services/user.service';
 import { Component, OnInit } from '@angular/core';
 import { of, Observable } from 'rxjs';
+import * as _ from 'lodash';
 
 @Component({
   selector: 'app-user-orders',

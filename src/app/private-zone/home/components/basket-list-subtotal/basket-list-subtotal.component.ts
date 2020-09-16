@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-basket-list-subtotal',
@@ -7,7 +7,13 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class BasketListSubtotalComponent implements OnInit {
   @Input() total: number;
+  @Output() buy: EventEmitter<any> = new EventEmitter<any>();
   constructor() {}
 
   ngOnInit(): void {}
+
+  onBuy(event: Event) {
+    event.stopPropagation();
+    this.buy.emit();
+  }
 }

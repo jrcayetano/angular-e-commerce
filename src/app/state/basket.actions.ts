@@ -5,6 +5,7 @@ export enum BasketActionsType {
   incrementProductQuantity = '[BASKET - Increment quantity]',
   deleteProduct = '[BASKET - delete product]',
   basketToggle = '[BASKET - toggle]',
+  clearBasket = '[BASKET - clear]',
 }
 
 export class AddProduct implements Action {
@@ -26,8 +27,13 @@ export class BasketToggle implements Action {
   readonly type = BasketActionsType.basketToggle;
 }
 
+export class ClearBasket implements Action {
+  readonly type = BasketActionsType.clearBasket;
+}
+
 export type BasketActions =
   | AddProduct
   | BasketToggle
   | IncremenProductQuantity
-  | DeleteProduct;
+  | DeleteProduct
+  | ClearBasket;

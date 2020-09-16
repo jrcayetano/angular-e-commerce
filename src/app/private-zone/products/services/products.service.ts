@@ -1,3 +1,4 @@
+import { Order } from './../../../models/order.model';
 import { ProductCard } from 'src/app/models/product-card.model';
 import { Observable } from 'rxjs';
 import { API_PRODUCTS } from './../../../consts/api';
@@ -11,7 +12,6 @@ import { map } from 'rxjs/operators';
 })
 export class ProductsService {
   constructor(private http: HttpClient) {}
-
   getAll(params?: HttpParams): Observable<any> {
     let url = `${environment.server_url}/${API_PRODUCTS}`;
 

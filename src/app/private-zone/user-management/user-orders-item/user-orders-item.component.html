@@ -10,7 +10,7 @@
       <div class="order-item__header__total">
         <div class="order-item__header__total__title">Total</div>
         <div class="order-item__header__total__value">
-          EUR {{ order.total }}
+          EUR {{ order.total | number: "1.1-2" }}
         </div>
       </div>
       <div class="order-item__header__receiver">

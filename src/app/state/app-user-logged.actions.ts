@@ -8,6 +8,7 @@ export enum UserLoggedActionsType {
   addFavoriteProduct = '[User logged - addFavoriteProduct]',
   addFavoriteProductInBulk = '[User logged - addFavoriteProductInBulk]',
   deleteFavoriteProduct = '[User logged - deleteFavoriteProduct]',
+  addOrder = '[User logged - addOrder]',
 }
 
 export class SetIsLogged implements Action {
@@ -44,6 +45,11 @@ export class DeleteFavoriteProduct implements Action {
   constructor(public payload: any) {}
 }
 
+export class AddOrder implements Action {
+  readonly type = UserLoggedActionsType.addOrder;
+  constructor(public payload: any) {}
+}
+
 export type UserLoggedActions =
   | SetIsLogged
   | AddFavoriteProduct
@@ -51,4 +57,5 @@ export type UserLoggedActions =
   | DeleteFavoriteProduct
   | SetUsername
   | SetEmail
-  | SetProfile;
+  | SetProfile
+  | AddOrder;
