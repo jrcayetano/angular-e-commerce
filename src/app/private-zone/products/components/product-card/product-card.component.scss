@@ -1,3 +1,4 @@
+@import "./../../../../../styles/colors.scss";
 .product-card {
   max-width: 200px;
 
@@ -20,7 +21,7 @@
 .product-card__info__delivery {
   display: block;
   text-align: center;
-  color: black;
+  color: $color-text-product-info;
   font-size: 15px;
 }
 .product-card__info__rating {

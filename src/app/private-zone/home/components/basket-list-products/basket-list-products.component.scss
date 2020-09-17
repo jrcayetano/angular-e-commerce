@@ -1,3 +1,4 @@
+@import "./../../../../../styles/colors.scss";
 .basket-list__products__item {
   display: flex;
   align-items: center;
@@ -21,7 +22,7 @@
   font-size: 12px;
 }
 .basket-list__products__info__price {
-  color: red;
+  color: $color-price-red;
   font-weight: 400;
 }
 

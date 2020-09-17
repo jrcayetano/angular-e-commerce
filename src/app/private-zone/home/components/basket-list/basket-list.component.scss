@@ -1,5 +1,6 @@
+@import "./../../../../../styles/colors.scss";
 .basket-list {
-  background-color: #fafafa;
+  background-color: $color-bg-basket-list;
   height: 100%;
   padding: 1rem;
 }

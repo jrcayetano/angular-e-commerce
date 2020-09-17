@@ -1,9 +1,8 @@
-$color_reserver-rights: #767676;
-$color_footer-links: white;
+@import "./../../../../../styles/colors.scss";
 
 footer {
   font-size: 12px;
-  background-color: #232f3e;
+  background-color: $color-bg-footer;
   min-height: 80px;
   display: flex;
   align-items: center;
@@ -32,15 +31,15 @@ footer {
   padding-top: 1rem;
 }
 .footer-wrap__link--white {
-  color: $color_footer-links;
+  color: $color-footer-links;
 }
 
 .footer-wrap__reserved-rights {
-  color: $color_reserver-rights;
+  color: $color-reserver-rights;
 }
 
 .footer {
-  color: white;
+  color: $color-footer-links;
   display: flex;
   flex-direction: column;
   /* justify-content: center; */
