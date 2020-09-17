@@ -2,6 +2,9 @@
   <div class="favorite-product__info">
     <div class="favorite-product__info__image">
       <img [src]="product.image" />
+      <div class="favorite-product__actions__date d-block d-sm-none">
+        Articulo añadido {{ product.addedDate }}
+      </div>
     </div>
     <div class="favorite-product__info__details">
       <div class="favorite-product__info__details__name">

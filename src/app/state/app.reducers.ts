@@ -4,6 +4,7 @@ import { AppActions, AppActionsType } from './app.actios';
 export const initialState: any = {
   selectedMenu: '',
   token: '',
+  isFirstLoadApp: true,
 };
 
 export function appReducer(state = initialState, action: AppActions) {
@@ -18,6 +19,12 @@ export function appReducer(state = initialState, action: AppActions) {
       return {
         ...state,
         token: action.payload,
+      };
+    }
+    case AppActionsType.setFirstLoadApp: {
+      return {
+        ...state,
+        isFirstLoadApp: action.payload,
       };
     }
     default:

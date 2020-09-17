@@ -10,3 +10,27 @@
 /* input:invalid {
   border: 2px dashed red;
 } */
+.login-form__wrapper {
+  width: 50%;
+  margin: 0 auto;
+}
+
+:host {
+  height: 68vh;
+  display: flex;
+  align-items: center;
+}
+
+.title-page {
+  margin-bottom: 2rem;
+}
+
+@media (max-width: 768px) {
+  .login-form__wrapper {
+    width: 100%;
+    margin: 0 auto;
+  }
+}
+.btn-form {
+  margin-top: 1rem;
+}

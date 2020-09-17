@@ -1,3 +1,4 @@
+import { SetFirstLoadApp } from './../../state/app.actios';
 import { Router } from '@angular/router';
 import { takeUntil } from 'rxjs/operators';
 import { AutoUnsubscribe } from './../../utils/auto-unsubscribe';
@@ -12,14 +13,26 @@ import { of, Observable } from 'rxjs';
 })
 export class HomeComponent extends AutoUnsubscribe implements OnInit {
   isBasketOpened$: Observable<boolean> = of(false);
-  constructor(private router: Router, private basketStore: Store<{ basket }>) {
+
+  constructor(
+    private router: Router,
+    private basketStore: Store<{ basket }>,
+    private appStore: Store<{ app }>
+  ) {
     super();
   }
 
   ngOnInit(): void {
     this.subscribeBasketStore();
-
-    // this.router.navigate(['products']);
+    this.appStore
+      .pipe(select('app', 'isFirstLoadApp'), takeUntil(this.autoUnsubscribe$))
+      .subscribe((isFirstLoad: boolean) => {
+        if (isFirstLoad) {
+          console.log(isFirstLoad);
+          this.appStore.dispatch(new SetFirstLoadApp(false));
+          this.router.navigate(['products']);
+        }
+      });
   }
 
   private subscribeBasketStore() {

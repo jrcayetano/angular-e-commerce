@@ -1,3 +1,4 @@
+import { PRODUCTS_PATH } from './../../consts/paths';
 import { ToastService } from './../../private-zone/shared/shared/services/toast.service';
 import { SetToken } from './../../state/app.actios';
 import {
@@ -74,7 +75,7 @@ export class LoginComponent implements OnInit {
         .pipe(take(1))
         .subscribe((userData) => {
           this.saveLoggedUserDataInStore(response, userData);
-          this.router.navigate([`${HOME_PATH}`]);
+          this.router.navigate([`${HOME_PATH}/${PRODUCTS_PATH}`]);
         });
     }
   }
