@@ -1,3 +1,4 @@
+@import "./../../../styles/colors.scss";
 :host {
   padding-bottom: 2rem;
   display: block;
@@ -13,7 +14,7 @@
 
 .border-top-card {
   padding-top: 1rem;
-  border-top: 2px solid #efefef;
+  border-top: 2px solid $color-border;
 }
 
 .products-main {
