@@ -23,6 +23,7 @@ export class BasketListComponent extends AutoUnsubscribe implements OnInit {
   subtotal = 0;
   basketList: ProductCard[] = [];
   userLoggedData;
+  isUserLogged = false;
   constructor(
     private basket: Store<{ basket }>,
     private userLoggedStore: Store<{ userLogged }>,
@@ -53,6 +54,13 @@ export class BasketListComponent extends AutoUnsubscribe implements OnInit {
   }
 
   onBuy() {
+    if (!this.isUserLogged) {
+      this.toastService.show('Debe iniciar sesión para completar la compra', {
+        classname: 'bg-info text-light',
+        delay: 3000,
+      });
+      return;
+    }
     const order: Order = this.orderService.generateOrder(
       this.basketList,
       this.subtotal,
@@ -82,5 +90,8 @@ export class BasketListComponent extends AutoUnsubscribe implements OnInit {
     this.userLoggedStore
       .pipe(select('userLogged', 'profile'), take(1))
       .subscribe((profile) => (this.userLoggedData = profile));
+    this.userLoggedStore
+      .pipe(select('userLogged', 'isLogged'), takeUntil(this.autoUnsubscribe$))
+      .subscribe((isLogged) => (this.isUserLogged = isLogged));
   }
 }

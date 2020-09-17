@@ -40,7 +40,7 @@ export class ProductDetailComponent implements OnInit {
       'Lo sentimos, no disponemos de stock de éste producto',
       {
         classname: 'bg-danger text-light',
-        delay: 200000,
+        delay: 3000,
       }
     );
   }
