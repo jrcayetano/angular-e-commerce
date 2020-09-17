@@ -1,8 +1,3 @@
-import { ProductsModule } from './../products/products.module';
-import { OffersModule } from './../offers/offers.module';
-import { UserManagementModule } from './../user-management/user-management.module';
-import { LoginModule } from './../../public-zone/login/login.module';
-import { RegisterModule } from './../../public-zone/register/register.module';
 import { HomeComponent } from './home.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
@@ -14,23 +9,34 @@ const routes: Routes = [
     children: [
       {
         path: 'login',
-        loadChildren: () => LoginModule,
+        loadChildren: () =>
+          import('./../../public-zone/login/login.module').then(
+            (m) => m.LoginModule
+          ),
       },
       {
         path: 'register',
-        loadChildren: () => RegisterModule,
+        loadChildren: () =>
+          import('./../../public-zone/register/register.module').then(
+            (m) => m.RegisterModule
+          ),
       },
       {
         path: 'products',
-        loadChildren: () => ProductsModule,
+        loadChildren: () =>
+          import('./../products/products.module').then((m) => m.ProductsModule),
       },
       {
         path: 'offers',
-        loadChildren: () => ProductsModule,
+        loadChildren: () =>
+          import('./../products/products.module').then((m) => m.ProductsModule),
       },
       {
         path: 'user',
-        loadChildren: () => UserManagementModule,
+        loadChildren: () =>
+          import('./../user-management/user-management.module').then(
+            (m) => m.UserManagementModule
+          ),
       },
     ],
   },
