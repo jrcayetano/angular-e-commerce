@@ -40,7 +40,7 @@ export class ProductDetailComponent implements OnInit {
       'Lo sentimos, no disponemos de stock de éste producto',
       {
         classname: 'bg-danger text-light',
-        delay: 3000,
+        delay: 200000,
       }
     );
   }
@@ -48,7 +48,7 @@ export class ProductDetailComponent implements OnInit {
   addToFavorite() {
     this.userLogedStore.dispatch(new AddFavoriteProduct(this.product));
     this.toastService.show('Producto agregado correctamente', {
-      classname: 'bg-success text-light',
+      classname: 'bg-success text-light mt-10',
       delay: 3000,
     });
   }
