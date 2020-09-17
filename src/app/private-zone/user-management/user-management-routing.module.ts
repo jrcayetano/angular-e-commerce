@@ -1,3 +1,4 @@
+import { AuthGuard } from './../../guard/auth.guard';
 import { UserFavoriteProductsComponent } from './user-favorite-products/user-favorite-products.component';
 import { UserOrdersComponent } from './user-orders/user-orders.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
@@ -9,18 +10,22 @@ const routes: Routes = [
     path: '',
     pathMatch: 'full',
     redirectTo: '/',
+    canActivate: [AuthGuard],
   },
   {
     path: 'edit-profile',
     component: UserProfileComponent,
+    canActivate: [AuthGuard],
   },
   {
     path: 'orders',
     component: UserOrdersComponent,
+    canActivate: [AuthGuard],
   },
   {
     path: 'favorite',
     component: UserFavoriteProductsComponent,
+    canActivate: [AuthGuard],
   },
 ];
 
