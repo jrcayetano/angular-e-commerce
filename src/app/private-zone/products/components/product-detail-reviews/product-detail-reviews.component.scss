@@ -1,4 +1,5 @@
 @import "./../../../../../styles/colors.scss";
+@import "./../../../../../styles/font.scss";
 .product-detail-review {
   margin-bottom: 1rem;
 }
@@ -26,7 +27,7 @@
     margin-right: 1rem;
   }
   span {
-    font-weight: 700;
+    font-weight: $font-bold;
   }
 }
 .product-detail-review__rating__date {

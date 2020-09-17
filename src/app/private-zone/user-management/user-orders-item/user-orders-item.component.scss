@@ -1,4 +1,5 @@
 @import "./../../../../styles/colors.scss";
+@import "./../../../../styles/font.scss";
 :host {
   display: block;
 }
@@ -37,7 +38,7 @@
 
 .order-item__body__delivery__status {
   font-size: 17px;
-  font-weight: 700;
+  font-weight: $font-bold;
 }
 
 .order-item__body__delivery__info {

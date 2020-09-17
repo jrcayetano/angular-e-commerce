@@ -1,4 +1,5 @@
 @import "./../../../../../styles/colors.scss";
+@import "./../../../../../styles/font.scss";
 .basket-list__total {
   display: flex;
   flex-direction: column;
@@ -13,6 +14,6 @@
 
 .quantity {
   font-size: 15px;
-  font-weight: 700;
+  font-weight: $font-bold;
   color: $color-price-red;
 }

@@ -1,4 +1,5 @@
 @import "./../../../../../styles/colors.scss";
+@import "./../../../../../styles/font.scss";
 .product-card {
   max-width: 200px;
 
@@ -34,7 +35,7 @@
 }
 
 .product-card__info__title {
-  font-weight: 700;
+  font-weight: $font-bold;
   word-wrap: break-word;
   max-height: 84px;
   overflow: hidden;
@@ -43,7 +44,7 @@
 
 .product-card__info__description,
 .product-card__info__price {
-  font-weight: 400;
+  font-weight: $font-medium;
 }
 
 .product-card__info__price {

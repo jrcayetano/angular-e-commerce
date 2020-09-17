@@ -1,3 +1,4 @@
+@import "./../../../../styles/font.scss";
 :host {
   display: block;
 }
@@ -25,7 +26,7 @@
 
 .favorite-product__info__details__name {
   font-size: 13px;
-  font-weight: 700;
+  font-weight: $font-bold;
   a {
     &:hover {
       text-decoration: none !important;
@@ -39,7 +40,7 @@
 
 .favorite-product__info__details__price {
   font-size: 17px;
-  font-weight: 500;
+  font-weight: $font-500;
 }
 
 .favorite-product__actions__date {

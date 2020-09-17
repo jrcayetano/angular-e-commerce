@@ -1,4 +1,5 @@
 @import "./../../../../styles/colors.scss";
+@import "./../../../../styles/font.scss";
 .favorite-list {
   display: grid;
   grid-template-columns: 20% auto;
@@ -22,7 +23,7 @@
 .favorite-list__groups__element {
   &.selected {
     .favorite-list__groups__element__name {
-      font-weight: 700;
+      font-weight: $font-bold;
     }
   }
 }
@@ -33,7 +34,7 @@
 
 .favorite-list__groups__element__scope {
   font-size: 11px;
-  font-weight: 400;
+  font-weight: $font-medium;
 }
 
 @media (max-width: 992px) {

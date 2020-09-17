@@ -1,4 +1,5 @@
 @import "./../../../../../styles/colors.scss";
+@import "./../../../../../styles/font.scss";
 
 footer {
   font-size: 12px;
@@ -53,7 +54,7 @@ footer {
 
 .column-title {
   font-size: 16px;
-  font-weight: 400;
+  font-weight: $font-medium;
   margin-bottom: 1rem;
   display: block;
 }
@@ -69,7 +70,7 @@ footer {
   flex-direction: column;
   margin-bottom: 0.5rem;
   .title-section {
-    font-weight: 400;
+    font-weight: $font-medium;
     font-size: 14px;
   }
 }
