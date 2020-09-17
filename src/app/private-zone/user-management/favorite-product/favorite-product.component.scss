@@ -6,12 +6,14 @@
   display: flex;
   justify-content: space-between;
   padding: 1rem;
+  align-items: center;
 }
 
 .favorite-product__info {
   display: flex;
   align-items: center;
   padding: 0.5rem;
+  max-width: 70%;
 }
 
 .favorite-product__info__image {
@@ -53,7 +55,23 @@
   }
 }
 
+@media (max-width: 768px) {
+  .favorite-product {
+    flex-direction: column;
+    align-items: inherit;
+  }
+  .favorite-product__info {
+    max-width: 100%;
+  }
+}
+
 @media (max-width: 576px) {
+  .favorite-product__info__image {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
   .favorite-product__info {
     flex-direction: column;
   }
