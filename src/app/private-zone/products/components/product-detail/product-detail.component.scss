@@ -1,3 +1,4 @@
+@import "./../../../../../styles/colors.scss";
 .product-detail-wrapper {
   padding-top: 2rem;
   padding-bottom: 2rem;
@@ -22,7 +23,7 @@
 }
 
 .detail-section__reviews {
-  border-top: 1px solid #efefef;
+  border-top: 1px solid $color-border;
   margin-top: 2rem;
   h5 {
     padding: 1rem 0;

@@ -1,9 +1,9 @@
-$color_reserver-rights: #767676;
-$color_footer-links: white;
+@import "./../../../../../styles/colors.scss";
+@import "./../../../../../styles/font.scss";
 
 footer {
   font-size: 12px;
-  background-color: #232f3e;
+  background-color: $color-bg-footer;
   min-height: 80px;
   display: flex;
   align-items: center;
@@ -32,15 +32,15 @@ footer {
   padding-top: 1rem;
 }
 .footer-wrap__link--white {
-  color: $color_footer-links;
+  color: $color-footer-links;
 }
 
 .footer-wrap__reserved-rights {
-  color: $color_reserver-rights;
+  color: $color-reserver-rights;
 }
 
 .footer {
-  color: white;
+  color: $color-footer-links;
   display: flex;
   flex-direction: column;
   /* justify-content: center; */
@@ -54,7 +54,7 @@ footer {
 
 .column-title {
   font-size: 16px;
-  font-weight: 400;
+  font-weight: $font-medium;
   margin-bottom: 1rem;
   display: block;
 }
@@ -70,7 +70,7 @@ footer {
   flex-direction: column;
   margin-bottom: 0.5rem;
   .title-section {
-    font-weight: 400;
+    font-weight: $font-medium;
     font-size: 14px;
   }
 }

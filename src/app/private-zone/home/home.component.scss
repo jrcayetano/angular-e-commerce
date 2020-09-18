@@ -1,6 +1,6 @@
-$color_main_background: #eaeded;
+@import "./../../../styles/colors.scss";
 :host {
-  background-color: $color_main_background;
+  background-color: $color-main-background;
 }
 
 .main-content {

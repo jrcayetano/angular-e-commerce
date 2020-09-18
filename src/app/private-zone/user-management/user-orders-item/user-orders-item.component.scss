@@ -1,6 +1,5 @@
-$colorHeaderOrder: #eef0f2;
-$borderderBottomHeader: 1px solid #dee2e6;
-
+@import "./../../../../styles/colors.scss";
+@import "./../../../../styles/font.scss";
 :host {
   display: block;
 }
@@ -15,7 +14,7 @@ $borderderBottomHeader: 1px solid #dee2e6;
   display: flex;
   justify-content: space-between;
 
-  border: borderderBottomHeader;
+  border: $borderderBottomHeader;
 }
 
 .order-item__Header--left {
@@ -39,7 +38,7 @@ $borderderBottomHeader: 1px solid #dee2e6;
 
 .order-item__body__delivery__status {
   font-size: 17px;
-  font-weight: 700;
+  font-weight: $font-bold;
 }
 
 .order-item__body__delivery__info {

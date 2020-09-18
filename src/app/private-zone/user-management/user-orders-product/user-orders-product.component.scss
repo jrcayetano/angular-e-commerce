@@ -1,6 +1,7 @@
+@import "./../../../../styles/colors.scss";
 .order-item__body__product-list {
   & > .order-item__body__product:not(:first-child) {
-    border-top: 1px solid #efefef;
+    border-top: 1px solid $color-border;
   }
 }
 
@@ -17,7 +18,7 @@
 }
 
 .order-item__body__product__price {
-  color: red;
+  color: $color-price-red;
 }
 
 @media (max-width: 768px) {

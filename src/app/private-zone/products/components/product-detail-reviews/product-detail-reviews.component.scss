@@ -1,3 +1,5 @@
+@import "./../../../../../styles/colors.scss";
+@import "./../../../../../styles/font.scss";
 .product-detail-review {
   margin-bottom: 1rem;
 }
@@ -21,14 +23,14 @@
 
 .product-detail-review__rating__title {
   app-rating-star {
-    color: #0066c0;
+    color: $color-star;
     margin-right: 1rem;
   }
   span {
-    font-weight: 700;
+    font-weight: $font-bold;
   }
 }
 .product-detail-review__rating__date {
-  color: 555;
+  color: $color-review-date;
   margin-bottom: 0.5rem;
 }
