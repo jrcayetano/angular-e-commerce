@@ -1,32 +1,5 @@
 {
-  "users": [
-    {
-      "email": "user1@email.com",
-      "password": "$2a$10$2vOxlstl7fI6z.kyH8cU5ewILd0p7r14mOZiM9LSKX.ZpI9swJjgy",
-      "username": "user1",
-      "name": " user1",
-      "surname": " user1",
-      "address": " user1",
-      "city": " user1",
-      "state": "Balears, Illes",
-      "zip": "42000",
-      "repassword": "Puerta164ever!",
-      "id": 1
-    },
-    {
-      "email": "user2@email.com",
-      "password": "$2a$10$7WQw8PxOvAxvw8E6ZYxixuMg3L6ORoVYj0T0erg8KWHsh5oct/GJ2",
-      "username": "user2",
-      "name": "this.toastService.show('aaaaaavbvvvv');",
-      "surname": "this.toastService.show('aaaaaavbvvvv');",
-      "address": "this.toastService.show('aaaaaavbvvvv');",
-      "city": "this.toastService.show('aaaaaavbvvvv');",
-      "state": "Albacete",
-      "zip": "42000",
-      "repassword": "Puerta164ever!",
-      "id": 2
-    }
-  ],
+  "users": [],
   "products": [
     {
       "id": 1,
